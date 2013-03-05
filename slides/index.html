@@ -1,178 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>
-			Develop a complete M2M application with Koneki and Mihini
-		</title>
-		<meta name="description" content="EclipseCon 2013 - M2M tutorial">
-		<meta name="author" content="Benjamin Cabé, Gaétan Morice">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link rel="stylesheet" href="reveal/css/reveal.min.css" type="text/css">
-		<link rel="stylesheet" href="reveal/css/theme/default.css" id="theme" type="text/css"><!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal/lib/css/zenburn.css" type="text/css"><!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<head>
+	<meta charset="utf-8">
+	<title>Develop a complete M2M application with Koneki and Mihini</title>
+	<meta name="description" content="EclipseCon 2013 - M2M tutorial">
+	<meta name="author" content="Benjamin Cabé, Gaétan Morice">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="stylesheet" href="reveal/css/reveal.min.css" type="text/css">
+	<link rel="stylesheet" href="reveal/css/theme/default.css" id="theme" type="text/css">
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="reveal/lib/css/zenburn.css" type="text/css">
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 
-		<script type="text/javascript">
-document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script><!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-		<link rel="stylesheet" href="theme.css" type="text/css">
-	</head>
-	<body>
-		<div class="reveal">
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+	<script type="text/javascript">
+document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="theme.css" type="text/css"></head>
+<body>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<section data-state="bg intro">
+					<h2>
+						<br></h2>
+					<h2>
+						Develop a complete M2M application
+						<span style="line-height: 1.2em;letter-spacing: -0.02em;">&nbsp;with Koneki and Mihini</span>
+					</h2>
+					<div>
+						<span style="line-height: 1.2em;letter-spacing: -0.02em;">
+							<br></span>
+					</div>
+					<h5>
+						<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
+					</h5>
+				</section>
+				<section data-state="bg learning">
+					<h2>What you will learn today</h2>
+					<div>
+						<ul>
+							<li class="fragment">What is Mihini</li>
+							<li class="fragment">What are the tools to develop Mihini apps</li>
+							<li class="fragment">Basic Lua programming</li>
+							<li class="fragment">How to connect an embedded device to sensors</li>
+							<li class="fragment">How to push data to a server</li>
+							<li class="fragment"> <i>(How to create a fancy end-user app, eg. mobile)</i>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section>
 				<section>
-					<section data-state="intro">
-						<h2>
-							<br>
-						</h2>
-						<h2>
-							Develop a complete M2M application<span style="line-height: 1.2em;letter-spacing: -0.02em;">&nbsp;with Koneki and Mihini</span>
-						</h2>
-						<div>
-							<span style="line-height: 1.2em;letter-spacing: -0.02em;"><br></span>
-						</div>
-						<h5>
-							<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
-						</h5>
-					</section>
-					<section>
-						<h2>
-							What you will learn today
-						</h2>
+					<h2>OUR GOAL</h2>
+					<iframe height="480" src="http://www.youtube.com/embed/K10kG0jD-Uw" width="640">&amp;amp;amp;nbsp;</iframe>
+				</section>
+				<section>
+					<h2>An end-to-end M2M app</h2>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div>SCHEMA</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Mihini</h2>
+
+				</section>
+				<section>
+					<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
+						<h2>Application Framework</h2>
+						<h2>+</h2>
+						<h2>Agent</h2>
+					</div>
+				</section>
+				<section>
+					<h2>Mihini Application Framework</h2>
+					<div>
+						<h3>
+							<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
+						</h3>
 						<div>
 							<ul>
-								<li class="fragment">What is Mihini
-								</li>
-								<li class="fragment">What are the tools to develop Mihini apps
-								</li>
-								<li class="fragment">Basic Lua programming
-								</li>
-								<li class="fragment">How to connect an embedded device to sensors
-								</li>
-								<li class="fragment">How to push data to a server
-								</li>
-								<li class="fragment">
-									<i>(How to create a fancy end-user app, eg. mobile)</i>
-								</li>
+								<li>Serial and I/O management,</li>
+								<li>Networking (FTP, HTTP, e-mail, …),</li>
+								<li>GPS,</li>
+								<li>Cryptography,</li>
+								<li>Modbus,</li>
+								<li>Local storage</li>
+								<li>etc.</li>
 							</ul>
 						</div>
-					</section>
+					</div>
+					<div>
+						<br></div>
 				</section>
 				<section>
-					<section>
-						<h2>
-							OUR GOAL
-						</h2><iframe height="480" src="http://www.youtube.com/embed/K10kG0jD-Uw" width="640">&amp;amp;amp;nbsp;</iframe>
-					</section>
-					<section>
-						<h2>
-							An end-to-end M2M app
-						</h2>
-							<br>
-							<br>
-							<br>
-							<br>
-						<div>
-							SCHEMA
-						</div>
-					</section>
+					<h2>Mihini Agent</h2>
+					<div>
+						<ul>
+							<li>
+								Data queues
+								<br></li>
+							<li>
+								Network bearers
+								<br></li>
+							<li>
+								Device management
+								<br></li>
+							<li>
+								Application container
+								<br></li>
+							<li>
+								Application configuration
+								<br></li>
+						</ul>
+					</div>
 				</section>
 				<section>
-					<section>
-						<h2>
-							Mihini
-						</h2>
-						<h3>
-							<br>
-						</h3>
-						<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
-						<h2>
-							Application Framework
-						</h2>
-						<h2>
-							+
-						</h2>
-						<h2>
-							Agent
-						</h2>
-						</div>
-					</section>
-					<section>
-						<h2>
-							Mihini Application Framework
-						</h2>
-						<div>
-							<h3>
-								<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
-							</h3>
-							<div>
-								<ul>
-									<li>Serial and I/O management,
-									</li>
-									<li>Networking (FTP, HTTP, e-mail, …),
-									</li>
-									<li>GPS,
-									</li>
-									<li>Cryptography,
-									</li>
-									<li>Modbus,
-									</li>
-									<li>Local storage
-									</li>
-									<li>etc.
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div>
-							<br>
-						</div>
-					</section>
-					<section>
-						<h2>
-							Mihini Agent
-						</h2>
-						<div>
-							<div>
-								<ul>
-									<li>
-										<span style="text-align: center;letter-spacing: -0.02em;">Data queues</span><br>
-									</li>
-									<li>
-										<span style="text-align: center;letter-spacing: -0.02em;">Network bearers</span><br>
-									</li>
-									<li>
-										<span style="text-align: center;letter-spacing: -0.02em;">Device management</span><br>
-									</li>
-									<li>
-										<span style="text-align: center;letter-spacing: -0.02em;">Application container</span><br>
-									</li>
-									<li>
-										<span style="text-align: center;letter-spacing: -0.02em;">Application configuration</span><br>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h2>
-							Mihini architecture
-						</h2>
-					</section>
+					<h2>Mihini architecture</h2>
+				</section>
+			</section>
+			<section>
+				<h2>Koneki</h2>
+			</section>
+			<section>
+				<section>
+					<h2>First steps with Lua</h2>
 				</section>
 				<section>
+					<h2>What is Lua?</h2>
+					<ul>
+						<li class="fragment">High-level programming language</li>
+						<li class="fragment">Scripting</li>
+						<li class="fragment">Simple</li>
+						<li class="fragment">Extensible</li>
+						<li class="fragment">Portable</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Hello World</h2>
+					<pre><code class="lua">print('Hello World')</code></pre>
+					<h4 class="fragment">Easy, eh?</h4>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Sending data to an M2M server</h2>
+					<h3>can be very bandwidth-consuming:</h3>
+					<div>
+						<ul>
+							<li>Lots of sensors</li>
+							<li>Lots of data samples</li>
+						</ul>
+					</div>
+				</section>
+				<section data-state="bg security">
 					<h2>
-						Koneki
+						Over-the-air transmission
+						<br/>
+						needs to be secure
 					</h2>
 				</section>
-			</div>
-		</div><script src="reveal/lib/js/head.min.js" type="text/javascript">
-</script><script src="reveal/js/reveal.min.js" type="text/javascript">
-</script><script type="text/javascript">
+				<section data-state="bg commands">
+					<h2>And how about commands?</h2>
+				</section>
+				<section>
+					<h1>M3DA</h1>
+					<h2 class="fragment">Micro M2M Data Access</h2>
+				</section>
+				<section data-state="bg compact">
+					<h2>Compact</h2>
+					<h3 class="fragment">… because in the wireless world, data overhead costs money</h3>
+				</section>
+				<section>
+					<h2>Interoperable</h2>
+					<h3 class="fragment">… because the M2M communication chain is heterogeneous</h3>
+				</section>
+				<section>
+					<h2>Secure</h2>
+					<h3 class="fragment">… because security is #1 concern for M2M adopters</h3>
+				</section>
+				<section>
+					<h2>Open</h2>
+					<h3 class="fragment">… because vendor lock-in hinders M2M adoption</h3>
+				</section>
+				<section>
+					<embed src="svg/m3da.svg" type="image/svg+xml" />
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Thanks!</h1>
+				</section>
+			</section>
+		</div>
+	</div>
+	<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
+	<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -190,7 +222,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugins/highlight.js/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
@@ -198,5 +230,5 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			});
 
 		</script>
-	</body>
+</body>
 </html>

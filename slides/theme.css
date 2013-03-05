@@ -1,13 +1,34 @@
-/** intro **/
-
-html.intro body {
-	background:url("http://farm1.staticflickr.com/158/357376583_8381f9d690_b_d.jpg");
+html.bg body {
 	background-position:center;
-	background-size: 100%;
+	background-size: cover !important;
 }
 
-html.intro section {
-	background-color: rgba(0,0,0,0.5);
+html.bg section {
+	background-color: rgba(0,0,0,0.7) !important;
 }
 
-/** end-intro **/
+html.intro body {	
+	background-image:url("images/intro_bg.jpg");
+}
+
+html.learning body {	
+	background-image:url("images/learning.jpg");
+}
+
+html.security body {	
+	background-image:url("images/security.jpg");
+}
+
+html.commands body {	
+	background-image:url("images/commands.jpg");
+}
+
+html.compact body {	
+	background-image:url("images/compact.jpg");
+}
+
+/*
+html.hands-on section h2 :before{
+	content: "HANDS-ON";
+}
+*/
