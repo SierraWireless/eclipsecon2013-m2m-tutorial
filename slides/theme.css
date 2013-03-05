@@ -1,0 +1,13 @@
+/** intro **/
+
+html.intro body {
+	background:url("http://farm1.staticflickr.com/158/357376583_8381f9d690_b_d.jpg");
+	background-position:center;
+	background-size: 100%;
+}
+
+html.intro section {
+	background-color: rgba(0,0,0,0.5);
+}
+
+/** end-intro **/
