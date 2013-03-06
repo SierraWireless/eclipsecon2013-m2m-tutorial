@@ -1,5 +1,10 @@
-intro_bg.jpg - http://www.flickr.com/photos/8070463@N03/2551366937/
-learning.jpg - http://www.flickr.com/photos/73645804@N00/3597217248/
-security.jpg - http://www.flickr.com/photos/43144679@N00/241755891
-commands.jpg - http://www.flickr.com/photos/33286810@N00/344489013/ 
-compact.jpg  - http://www.flickr.com/photos/26650236@N07/8258140223
+intro_bg.jpg		- http://www.flickr.com/photos/8070463@N03/2551366937/
+learning.jpg		- http://www.flickr.com/photos/73645804@N00/3597217248/
+security.jpg		- http://www.flickr.com/photos/43144679@N00/241755891
+commands.jpg		- http://www.flickr.com/photos/33286810@N00/344489013/ 
+compact.jpg			- http://www.flickr.com/photos/26650236@N07/8258140223
+secure.jpg			- http://www.flickr.com/photos/62559061@N06/6026542856
+open.jpg			- http://www.flickr.com/photos/62722321@N00/168516836
+interoperable.jpg	- http://www.flickr.com/photos/22767170@N00/384027019
+moon.jpg			- http://www.flickr.com/photos/26051251@N06/6906348814/
+sensors.jpg			- http://www.flickr.com/photos/25813335@N00/3239598541

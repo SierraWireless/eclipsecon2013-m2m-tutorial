@@ -1,6 +1,11 @@
 html.bg body {
 	background-position:center;
 	background-size: cover !important;
+
+	-webkit-transition: background-image 0.8s !important;
+	-moz-transition: background-image 0.8s !important;
+	-o-transition: background-image 0.8s !important;
+	transition: background-image 0.8s !important;
 }
 
 html.bg section section {
@@ -27,6 +32,25 @@ html.compact body {
 	background-image:url("images/compact.jpg");
 }
 
+html.secure body {	
+	background-image:url("images/security2.jpg");
+}
+
+html.open body {	
+	background-image:url("images/open.jpg");
+}
+
+html.interoperable body {	
+	background-image:url("images/interoperable.jpg");
+}
+
+html.moon body {	
+	background-image:url("images/moon.jpg");
+}
+
+html.sensors body {	
+	background-image:url("images/sensors.jpg");
+}
 /*
 html.hands-on section h2 :before{
 	content: "HANDS-ON";
