@@ -3,8 +3,8 @@ html.bg body {
 	background-size: cover !important;
 }
 
-html.bg section {
-	background-color: rgba(0,0,0,0.7) !important;
+html.bg section section {
+	background-color: rgba(0,0,0,0.6) !important;
 }
 
 html.intro body {	
