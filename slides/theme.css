@@ -58,6 +58,43 @@ html.hands-on section h2 :before{
 }
 */
 
+
+.hands-on {
+  -moz-border-radius: 25px;
+  -moz-box-shadow: #6E7849 0px 0px 10px;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-border-radius: 25px;
+  -webkit-box-shadow: #6E7849 0 0 10px;
+  -webkit-transition: all 0.5s ease;
+  background-color: #000000;
+  background-image: -moz-linear-gradient(90deg, #d0c9f7, #000000);
+  background-image: -ms-linear-gradient(90deg, #d0c9f7, #000000);
+  background-image: -o-linear-gradient(90deg, #d0c9f7, #000000);
+  background-image: -webkit-linear-gradient(90deg, #d0c9f7, #000000);
+  background-image: linear-gradient(90deg, #d0c9f7, #000000);
+  border-radius: 25px;
+  border: 2px solid #4a5032;
+  box-shadow: #6E7849 0px 0px 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 4em;
+  margin: auto;
+  padding: 15px !important;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
+  transition: all 0.5s ease;
+  position: absolute;
+  left: 0px; top:0px;
+}
+.hands-on:hover {
+  padding: 15px;
+}
+
+
+
+
 div.tree {
 	margin-left: -2em;
 }
