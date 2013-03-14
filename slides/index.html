@@ -22,6 +22,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 <body>
 	<div class="reveal">
 		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="button">HANDS-ON</div>
 		<div class="slides">
 			<section>
 				<section data-state="bg intro">
@@ -39,7 +40,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
 					</h5>
 				</section>
-				<section data-state="bg learning">
+				<section data-state="bg learning hands-on">
 					<h2>What you will learn today</h2>
 					<div>
 						<ul>
@@ -62,8 +63,8 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section>
-					<h1>Mihini</h1>
-
+					<h2>Mihini</h2>
+					<h3 class="fragment">Embedded M2M application framework</h3>
 				</section>
 				<section>
 					<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
@@ -120,8 +121,59 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 			</section>
 			<section>
-				<h2>Koneki</h2>
-				<h3 class="fragment">Tools for M2M developers</h3>
+				<section>
+					<h2>Koneki</h2>
+					<h3 class="fragment">Tools for M2M developers</h3>
+				</section>
+				<section>
+					<h2>Help developers&hellip;</h2>
+					<h3 class="fragment">develop</h3>
+					<h3 class="fragment">simulate</h3>
+					<h3 class="fragment">debug</h3>
+					<h3 class="fragment">deploy</h3>
+				</section>
+				<section>
+					<h2>OMA-DM Simulator</h2>
+				</section>
+				<section>
+					<h2>Lua Development Tools</h2>
+				</section>
+				<section>
+					<h2>Code completion</h2>
+					<img src="images/ldt-screenshots/screenCodeCompletion.png" />
+				</section>
+				<section>
+					<h2>Templates</h2>
+					<img src="images/ldt-screenshots/screenTemplate.png" />
+				</section>
+				<section>
+					<h2>Debugger</h2>
+					<img src="images/ldt-screenshots/screenDebugger.png" />
+				</section>
+				<section>
+					<h2>Syntax coloring</h2>
+					<img src="images/ldt-screenshots/screenVariableHighlight.png" />
+				</section>
+				<section>
+					<h2>Error markers</h2>
+					<img src="images/ldt-screenshots/screenErrorMarker.png" />
+				</section>
+				<section>
+					<h2>Outline</h2>
+					<img src="images/ldt-screenshots/screenOutline.png" />
+				</section>
+				<section>
+					<h2>Formatter</h2>
+					<img src="images/ldt-screenshots/screenFormatter.png" />
+				</section>
+				<section>
+					<h2>Navigation</h2>
+					<img src="images/ldt-screenshots/screenCodeNavigation.png" />
+				</section>
+				<section>
+					<h2>Cross-platform</h2>
+					<img src="images/ldt-screenshots/screenCrossPlatform.png" />
+				</section>
 			</section>
 			<section>
 				<section>
@@ -154,7 +206,9 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>Tables, tables, tables!</h2>
 				</section>
 				<section>
-					<h2>Tables are used for storing collections</h2>
+					<h2>
+						Tables are used for
+						<br>storing collections</h2>
 					<h3 class="fragment">lists, sets, arrays, associative arrays</h3>
 				</section>
 				<section>
@@ -367,7 +421,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [

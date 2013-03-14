@@ -12,6 +12,18 @@ html.bg section section {
 	background-color: rgba(0,0,0,0.6) !important;
 }
 
+.button {
+	margin-left: 0.5em !important;
+	margin-top: 0.5em !important;
+	display:none !important;
+	width: 150px;
+	text-align: center;
+}
+
+html.hands-on .button {
+	display:block !important;
+}
+
 html.intro body {	
 	background-image:url("images/intro_bg.jpg");
 }
@@ -59,7 +71,7 @@ html.hands-on section h2 :before{
 */
 
 
-.hands-on {
+.button {
   -moz-border-radius: 25px;
   -moz-box-shadow: #6E7849 0px 0px 10px;
   -moz-transition: all 0.5s ease;
@@ -79,21 +91,16 @@ html.hands-on section h2 :before{
   box-shadow: #6E7849 0px 0px 10px;
   color: #ffffff;
   display: inline-block;
+  font-family: "League Gothic", Impact, sans-serif !important;
   font-size: 4em;
   margin: auto;
   padding: 15px !important;
   text-decoration: none;
   text-shadow: #000000 5px 5px 15px;
   transition: all 0.5s ease;
-  position: absolute;
+  position: static;
   left: 0px; top:0px;
 }
-.hands-on:hover {
-  padding: 15px;
-}
-
-
-
 
 div.tree {
 	margin-left: -2em;
