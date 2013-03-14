@@ -18,6 +18,8 @@ html.bg section section {
 	display:none !important;
 	width: 150px;
 	text-align: center;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 html.hands-on .button {
