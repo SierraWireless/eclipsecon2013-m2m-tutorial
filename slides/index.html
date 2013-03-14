@@ -22,7 +22,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 <body>
 	<div class="reveal">
 		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="button">HANDS-ON</div>
+		<div class="button">HANDS-ON!</div>
 		<div class="slides">
 			<section>
 				<section data-state="bg intro">
@@ -40,7 +40,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
 					</h5>
 				</section>
-				<section data-state="bg learning hands-on">
+				<section data-state="bg learning">
 					<h2>What you will learn today</h2>
 					<div>
 						<ul>
@@ -175,6 +175,60 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>Cross-platform</h2>
 					<img src="images/ldt-screenshots/screenCrossPlatform.png" />
 				</section>
+				<section>
+					<h2>Lua Development Tools for Mihini</h2>
+				</section>
+				<section>
+					<h2>Execution environment</h2>
+					<h3>
+						A file containing information about the environment where a Lua application is supposed to be run
+					</h3>
+				</section>
+				<section>
+					<h2>Target Management</h2>
+					<h3>LDT leverages Eclipse RSE to interact with Mihini:</h3>
+					<div>
+						<ul>
+							<li class="fragment">shell</li>
+							<li class="fragment">script deployment</li>
+							<li class="fragment">remote debug</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section data-state="hands-on">
+					<h2>Installing Koneki</h2>
+					<ul>
+						<li>
+							Unpack the archive you'll find in the
+							<code>Koneki/</code>
+							folder of the USB stick on your machine
+							<ul>
+								<li>
+									⚠
+									<span style="text-decoration:underline;">Careful with Windows' long paths and built-in unzip feature</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-state="hands-on">
+					<h2>First launch</h2>
+				</section>
+				<section data-state="hands-on">
+					<h2>Setup Mihini execution environment</h2>
+					<div>
+						Add the &nbsp;
+						<code>Mihini/mihini-0.8.zip</code>
+						&nbsp; file
+						<br/>
+						in&nbsp;
+						<code>Preferences > Lua > Execution Environments</code>
+						<br/>
+					</div>
+
+				</section>
 			</section>
 			<section>
 				<section>
@@ -259,7 +313,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					</h2>
 				</section>
 				<section data-state="bg commands">
-					<h2>And how about commands?</h2>
+					<h2>And what about commands?</h2>
 				</section>
 				<section>
 					<h1>M3DA</h1>
@@ -396,18 +450,18 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<h2>
 							Mihini API for
 							<br>over-the-air communications</h2>
-						<h3> </h3>
-						<h3> </h3>
-						<h4>Airvantage library provided in C and Lua</h4>
+						<h3></h3>
+						<h3></h3>
+						<h4>M3DA library provided in C and Lua</h4>
 					</section>
 					<section>
 						<h2>Data flow</h2>
-						<h3>tree main steps:</h3>
+						<h3>Three main steps:</h3>
 						<div>
 							<ol>
-								<li>data is generated/acquired in asset application</li>
-								<li>data is pushed to Mihini agent using Racon lib</li>
-							<li>data is pushed to M2M Server using M3DA protocol</li>
+								<li class="fragment">Data is generated/acquired in asset application</li>
+								<li class="fragment">Data is pushed to Mihini agent using Racon lib</li>
+								<li class="fragment">Data is pushed to M2M Server using M3DA protocol</li>
 							</ol>
 						</div>
 					</section>
@@ -423,8 +477,8 @@ local house = racon.newasset("house")
 						</code></pre>
 					</section>
 					<section>
-                                                <h3>Pushing data</h3>
-                                                <pre><code lang="lua">
+						<h3>Pushing data</h3>
+						<pre><code lang="lua">
 -- push data to Mihini agent:
 house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly"
 -- `hourly` is the data queue in the agent where the data is stored
@@ -434,38 +488,38 @@ house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly"
 -- you may want to force data flushing from agent to M2M server:
 racon.triggerpolicy("hourly")
                                                 </code></pre>
-                                        </section>
+					</section>
 					<section>
 						<h3>Going Further:</h3>
-                                                <div>
-						Those features are also provided:
-                                                        <ul>
-                                                                <li> Data reception </li>
-                                                                <li> Advanced data sending:
+						<div>
+							Those features are also provided:
+							<ul>
+								<li>Data reception</li>
+								<li>
+									Advanced data sending:
 									<ul>
-										<li> structured and optimized data </li>
-										<li> data consolidation </li>
-										<li> ... </li>
-									<ul>
-								</li>
-                                                        </ul>
-                                                </div>
+										<li>structured and optimized data</li>
+										<li>data consolidation</li>
+										<li>...</li>
+										<ul></li>
+									</ul>
+								</div>
+							</section>
+						</section>
+						<section>
+							<!-- TODO -->
+						</section>
 					</section>
-				</section>
-				<section>
-					<!-- TODO -->
-				</section>
-			</section>
-			<section>
-				<section>
-					<h1>Thanks!</h1>
-				</section>
-			</section>
-		</div>
-	</div>
-	<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
-	<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
+					<section>
+						<section>
+							<h1>Thanks!</h1>
+						</section>
+					</section>
+				</div>
+			</div>
+			<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
+			<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
+			<script type="text/javascript">
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -494,5 +548,4 @@ racon.triggerpolicy("hourly")
 
 		</script>
 </body>
-</html>
-
+		</html>
