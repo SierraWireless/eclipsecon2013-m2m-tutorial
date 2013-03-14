@@ -396,6 +396,60 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<h2>
 							Mihini API for
 							<br>over-the-air communications</h2>
+						<h3> </h3>
+						<h3> </h3>
+						<h4>Airvantage library provided in C and Lua</h4>
+					</section>
+					<section>
+						<h2>Data flow</h2>
+						<h3>tree main steps:</h3>
+						<div>
+							<ol>
+								<li>data is generated/acquired in asset application</li>
+								<li>data is pushed to Mihini agent using Racon lib</li>
+							<li>data is pushed to M2M Server using M3DA protocol</li>
+							</ol>
+						</div>
+					</section>
+					<section>
+						<h3>Lua Library initialization</h3>
+						<pre><code lang="lua">
+-- load the module
+local racon = require("racon")
+-- create an `asset`:
+-- software element exchanging data with M2M server,
+-- identified by unique id
+local house = racon.newasset("house")
+						</code></pre>
+					</section>
+					<section>
+                                                <h3>Pushing data</h3>
+                                                <pre><code lang="lua">
+-- push data to Mihini agent:
+house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly"
+-- `hourly` is the data queue in the agent where the data is stored
+-- each queue is linked to a data policy:
+-- this is how / when the data is *automatically* pushed to server
+
+-- you may want to force data flushing from agent to M2M server:
+racon.triggerpolicy("hourly")
+                                                </code></pre>
+                                        </section>
+					<section>
+						<h3>Going Further:</h3>
+                                                <div>
+						Those features are also provided:
+                                                        <ul>
+                                                                <li> Data reception </li>
+                                                                <li> Advanced data sending:
+									<ul>
+										<li> structured and optimized data </li>
+										<li> data consolidation </li>
+										<li> ... </li>
+									<ul>
+								</li>
+                                                        </ul>
+                                                </div>
 					</section>
 				</section>
 				<section>
