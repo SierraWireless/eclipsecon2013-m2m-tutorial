@@ -227,17 +227,106 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section data-state="bg sensors">
-					<h2>Communicating with local sensors</h2>
+					<h2>Local Communication </h2>
 				</section>
 				<section>
 					<h2>
-						M2M is about bridging machines (sensors)
+						M2M is about bridging machines (sensors & actuators)
 						<br>to the Internet</h2>
 				</section>
 				<section>
 					<h2>
 						Mihini provides API to communicate
-						<br>with these sensors</h2>
+						<br>with these machines</h2>
+				</section>
+				<section>
+					<h2>Serial port API</h2>
+					Lua serial API offers simple access to serial port:
+					<pre><code lang="lua">
+-- open the serial port
+local serial = require("serial")
+local portconfig = { parity = "none", flowControl = "none", numDataBits = 8, numStopBits = 1, baudRate = 115200 }
+local sdev = serial.open("/dev/ttySO", portconfig)
+
+-- Now use it!
+-- the provided API is aligned with file manipulation API
+local read_data = sdev:read(2) --reads 2 bytes on serial port
+--
+sdev:write("somedata") --writes buffer to serial port
+</code></pre>
+				</section>
+				<section>
+					<h2>Modbus</h2>
+				<ul>
+					<li>Industrial communication protocol
+						<br><small>De facto standard created by Modicon/Schneider Electric</small>
+					</li>
+					<br>
+					<li>Application layer protocol
+						<br>stateless client-server protocol
+					</li>
+					<br>
+					<li>Transations
+						<ul>
+                                                        <li>request by a client (a.k.a Master)</li>
+							<li>response by the server (a.k.a. Slave)</li>
+						</ul>
+					</li>
+
+				</ul>
+				</section>
+				<section>
+					<h2>Modbus</h2>
+				<ul>
+					<li>Serial or TCP
+						<br><small>Many devices can be connected in the same network</small>
+					</li>
+					<li>2 transmission mode: 'RTU', 'ASCII'
+						<br><small>Each mode comes with specific encoding, framing and error checksum mecanism </small>
+					</li>
+					<li>Manipulates raw data (bits or words)
+						<br><small>Data type names are related to PLC/relays context: coil, discrete input, ...</small>
+					</li>
+				<ul/>
+<!-- http://jamod.sourceforge.net/kbase/protocol.html -->
+				</section>
+				<section>
+					<h2>Modbus Lua API</h2>
+					Modbus Master library (i.e. client)
+					<br>Initializing the protocol stack
+					<pre><code lang="lua">
+-- load the module
+local modbus = require("modbus")
+
+-- As Modbus module uses Serial module,
+-- you can use the same port configuration table
+local portcfg = { parity="none", flowControl="none", numDataBits=8,
+		  numStopBits=1, baudRate=115200 }
+
+-- create new modbus instance using serial configuration
+-- and selecting modbus transmission mode.
+local mdev = modbus.new("/dev/ttyS0", portcfg, "ASCII")
+</code></pre>
+				</section>
+				<section>
+					<h2>Modbus Lua API</h2>
+					Sending / Reading data
+					<pre><code lang="lua">
+-- reads 2 registers (16 bits word) on slave id 10 at address 42.
+local input_buffer = mdev:readHoldingRegisters(10, 42, 2)
+-- decode input buffer: e.g. 2 signed short int
+-- (decoding depends on data mapping on requested modbus device)
+local shortint1, shortint2 = string.unpack(input_buffer, "h2")
+
+-- writes to device id 1, address 90, 3 unsigned short values
+mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
+
+-- Many other way to read/write data to a Modbus device!
+</code></pre>
+				</section>
+				<section>
+					<h2> Local communication protocols</h2>
+					<br><h4> Many more to come!<h4>
 				</section>
 			</section>
 			<section>
@@ -398,7 +487,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 							<br>over-the-air communications</h2>
 						<h3> </h3>
 						<h3> </h3>
-						<h4>Airvantage library provided in C and Lua</h4>
+						<h4>Racon library is provided in C and Lua</h4>
 					</section>
 					<section>
 						<h2>Data flow</h2>
@@ -407,7 +496,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 							<ol>
 								<li>data is generated/acquired in asset application</li>
 								<li>data is pushed to Mihini agent using Racon lib</li>
-							<li>data is pushed to M2M Server using M3DA protocol</li>
+								<li>data is pushed to the M2M Server using M3DA protocol</li>
 							</ol>
 						</div>
 					</section>
@@ -426,7 +515,8 @@ local house = racon.newasset("house")
                                                 <h3>Pushing data</h3>
                                                 <pre><code lang="lua">
 -- push data to Mihini agent:
-house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly"
+-- timestamped temperature of the bedroom
+house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly")
 -- `hourly` is the data queue in the agent where the data is stored
 -- each queue is linked to a data policy:
 -- this is how / when the data is *automatically* pushed to server
@@ -436,7 +526,7 @@ racon.triggerpolicy("hourly")
                                                 </code></pre>
                                         </section>
 					<section>
-						<h3>Going Further:</h3>
+						<h3>Going Further</h3>
                                                 <div>
 						Those features are also provided:
                                                         <ul>
