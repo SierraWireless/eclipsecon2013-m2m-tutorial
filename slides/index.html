@@ -128,7 +128,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Help developers&hellip;</h2>
-					<h3 class="fragment">develop</h3>
+					<h3 class="fragment">write code</h3>
 					<h3 class="fragment">simulate</h3>
 					<h3 class="fragment">debug</h3>
 					<h3 class="fragment">deploy</h3>
@@ -281,12 +281,16 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section data-state="bg sensors">
-					<h2>Local Communication </h2>
+					<h2>Local Communication</h2>
 				</section>
 				<section>
 					<h2>
-						M2M is about bridging machines (sensors & actuators)
-						<br>to the Internet</h2>
+						M2M is about bridging machines
+						<br/>
+						(sensors & actuators)
+						<br/>
+						to the Internet
+					</h2>
 				</section>
 				<section>
 					<h2>
@@ -295,59 +299,68 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Serial port API</h2>
-					Lua serial API offers simple access to serial port:
 					<pre><code lang="lua">
 -- open the serial port
 local serial = require("serial")
-local portconfig = { parity = "none", flowControl = "none", numDataBits = 8, numStopBits = 1, baudRate = 115200 }
-local sdev = serial.open("/dev/ttySO", portconfig)
+local portconfig = { parity = "none", flowControl = "none", 
+                     numDataBits = 8, numStopBits = 1, baudRate = 115200 }
+local sdev = serial.open("/dev/ttyS0", portconfig)
 
 -- Now use it!
 -- the provided API is aligned with file manipulation API
-local read_data = sdev:read(2) --reads 2 bytes on serial port
---
-sdev:write("somedata") --writes buffer to serial port
+local read_data = sdev:read(2) -- reads 2 bytes on serial port
+
+sdev:write("somedata") -- writes buffer to serial port
 </code></pre>
 				</section>
 				<section>
 					<h2>Modbus</h2>
-				<ul>
-					<li>Industrial communication protocol
-						<br><small>De facto standard created by Modicon/Schneider Electric</small>
-					</li>
-					<br>
-					<li>Application layer protocol
-						<br>stateless client-server protocol
-					</li>
-					<br>
-					<li>Transations
-						<ul>
-                                                        <li>request by a client (a.k.a Master)</li>
-							<li>response by the server (a.k.a. Slave)</li>
-						</ul>
-					</li>
-
-				</ul>
+					<ul>
+						<li class="fragment">
+							Industrial communication protocol
+							<br>
+							<small>De facto standard created by Modicon/Schneider Electric</small>
+						</li>
+						<li class="fragment">
+							Application layer protocol
+							<br>stateless client-server protocol</li>
+						<li class="fragment">
+							Transactions
+							<ul>
+								<li>request by a client (= master)</li>
+								<li>response by the server (= slave)</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Modbus</h2>
-				<ul>
-					<li>Serial or TCP
-						<br><small>Many devices can be connected in the same network</small>
-					</li>
-					<li>2 transmission mode: 'RTU', 'ASCII'
-						<br><small>Each mode comes with specific encoding, framing and error checksum mecanism </small>
-					</li>
-					<li>Manipulates raw data (bits or words)
-						<br><small>Data type names are related to PLC/relays context: coil, discrete input, ...</small>
-					</li>
-				<ul/>
-<!-- http://jamod.sourceforge.net/kbase/protocol.html -->
+					<ul>
+						<li>
+							Serial or TCP
+							<br>
+							<small>Many devices can be connected in the same network</small>
+						</li>
+						<li>
+							2 transmission mode: 'RTU', 'ASCII'
+							<br>
+							<small>
+								Each mode comes with specific encoding, framing and error checksum mecanism
+							</small>
+						</li>
+						<li>
+							Manipulates raw data (bits or words)
+							<br>
+							<small>
+								Data type names are related to PLC/relays context: coil, discrete input, ...
+							</small>
+						</li>
+					</ul>
+					<!-- http://jamod.sourceforge.net/kbase/protocol.html -->
 				</section>
 				<section>
 					<h2>Modbus Lua API</h2>
-					Modbus Master library (i.e. client)
-					<br>Initializing the protocol stack
+					<h3>Initializing the client protocol stack</h3>
 					<pre><code lang="lua">
 -- load the module
 local modbus = require("modbus")
@@ -364,10 +377,11 @@ local mdev = modbus.new("/dev/ttyS0", portcfg, "ASCII")
 				</section>
 				<section>
 					<h2>Modbus Lua API</h2>
-					Sending / Reading data
+					<h3>Sending / Reading data</h3>
 					<pre><code lang="lua">
 -- reads 2 registers (16 bits word) on slave id 10 at address 42.
 local input_buffer = mdev:readHoldingRegisters(10, 42, 2)
+
 -- decode input buffer: e.g. 2 signed short int
 -- (decoding depends on data mapping on requested modbus device)
 local shortint1, shortint2 = string.unpack(input_buffer, "h2")
@@ -379,8 +393,8 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 </code></pre>
 				</section>
 				<section>
-					<h2> Local communication protocols</h2>
-					<br><h4> Many more to come!<h4>
+					<h2>Local communication protocols</h2>
+					<h3>Many more to come! (e.g. GPIO)</h3>
 				</section>
 			</section>
 			<section>
@@ -582,7 +596,6 @@ racon.triggerpolicy("hourly")
 					<section>
 						<h3>Going Further</h3>
 						<div>
-							Those features are also provided:
 							<ul>
 								<li>Data reception</li>
 								<li>
@@ -591,25 +604,25 @@ racon.triggerpolicy("hourly")
 										<li>structured and optimized data</li>
 										<li>data consolidation</li>
 										<li>...</li>
-										<ul></li>
 									</ul>
-								</div>
-							</section>
-						</section>
-						<section>
-							<!-- TODO -->
-						</section>
+								</li>
+							</ul>
+						</div>
 					</section>
 					<section>
-						<section>
-							<h1>Thanks!</h1>
-						</section>
+						<!-- TODO -->
 					</section>
-				</div>
+				</section>
+				<section>
+					<section>
+						<h1>Thanks!</h1>
+					</section>
+				</section>
 			</div>
-			<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
-			<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
-			<script type="text/javascript">
+		</div>
+		<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
+		<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -638,4 +651,4 @@ racon.triggerpolicy("hourly")
 
 		</script>
 </body>
-		</html>
+	</html>
