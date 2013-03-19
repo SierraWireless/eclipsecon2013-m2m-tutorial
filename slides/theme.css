@@ -30,6 +30,9 @@ html.intro body {
 	background-image:url("images/intro_bg.jpg");
 }
 
+html.wifi body {	
+	background-image:url("images/wifi.jpg");
+}
 html.learning body {	
 	background-image:url("images/learning.jpg");
 }
@@ -66,42 +69,36 @@ html.sensors body {
 	background-image:url("images/sensors.jpg");
 }
 
+html.arduino body {	
+	background-image:url("images/arduino.jpg");
+}
+
 /*
 html.hands-on section h2 :before{
 	content: "HANDS-ON";
 }
 */
 
-
 .button {
-  -moz-border-radius: 25px;
-  -moz-box-shadow: #6E7849 0px 0px 10px;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-border-radius: 25px;
-  -webkit-box-shadow: #6E7849 0 0 10px;
-  -webkit-transition: all 0.5s ease;
-  background-color: #000000;
-  background-image: -moz-linear-gradient(90deg, #d0c9f7, #000000);
-  background-image: -ms-linear-gradient(90deg, #d0c9f7, #000000);
-  background-image: -o-linear-gradient(90deg, #d0c9f7, #000000);
-  background-image: -webkit-linear-gradient(90deg, #d0c9f7, #000000);
-  background-image: linear-gradient(90deg, #d0c9f7, #000000);
-  border-radius: 25px;
-  border: 2px solid #4a5032;
-  box-shadow: #6E7849 0px 0px 10px;
-  color: #ffffff;
-  display: inline-block;
-  font-family: "League Gothic", Impact, sans-serif !important;
-  font-size: 4em;
-  margin: auto;
-  padding: 15px !important;
-  text-decoration: none;
-  text-shadow: #000000 5px 5px 15px;
-  transition: all 0.5s ease;
-  position: static;
-  left: 0px; top:0px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff !important;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff !important;
+	box-shadow:inset 0px 1px 0px 0px #ffffff !important;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) ) !important;
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% ) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed') !important;
+	background-color:#dfdfdf !important;
+	-moz-border-radius:6px !important;
+	-webkit-border-radius:6px !important;
+	border-radius:6px !important;
+	border:3px solid #dcdcdc !important;
+	display:inline-block;
+	color:#333 !important;
+  	font-family: "League Gothic", Impact, sans-serif !important;
+	font-size:36px !important;
+	font-weight:bold !important;
+	padding:6px 24px !important;
+	text-decoration:none !important;
+	text-shadow:1px 1px 0px #ffffff !important;
 }
 
 div.tree {
@@ -125,8 +122,6 @@ div.tree {
 	transition: all 0.5s!important;
 	-webkit-transition: all 0.5s!important;
 	-moz-transition: all 0.5s!important;
-
-
 }
 
 /*We will use ::before and ::after to draw the connectors*/

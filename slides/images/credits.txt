@@ -8,3 +8,5 @@ open.jpg			- http://www.flickr.com/photos/62722321@N00/168516836
 interoperable.jpg	- http://www.flickr.com/photos/22767170@N00/384027019
 moon.jpg			- http://www.flickr.com/photos/26051251@N06/6906348814/
 sensors.jpg			- http://www.flickr.com/photos/25813335@N00/3239598541
+wifi.jpg			- http://www.flickr.com/photos/29312235@N00/211289845
+arduino.jpg			- http://www.flickr.com/photos/83986067@N00/188147706

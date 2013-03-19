@@ -40,6 +40,12 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
 					</h5>
 				</section>
+				<section data-state="bg wifi">
+					<h2>Before we get started&hellip;</h2>
+					<h3>WIFI: MIHINI-TUTORIAL</h3>
+					<h3>Slides: http://192.168.0.10:1948</h3>
+				</section>
+
 				<section data-state="bg learning">
 					<h2>What you will learn today</h2>
 					<div>
@@ -49,7 +55,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 							<li class="fragment">Basic Lua programming</li>
 							<li class="fragment">How to connect an embedded device to sensors</li>
 							<li class="fragment">How to push data to a server</li>
-							<li class="fragment"> <i>(How to create a fancy end-user app, eg. mobile)</i>
+							<li class="fragment"> <i>(How to create a fancy end-user app)</i>
 							</li>
 						</ul>
 					</div>
@@ -278,6 +284,10 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h3>Creating a table</h3>
 					<pre><code lang="lua">x = { value = 123, text = "hello" }</code></pre>
 				</section>
+				<!-- other Lua features??? -->
+			</section>
+			<section>
+				<section data-state="hands-on"></section>
 			</section>
 			<section>
 				<section data-state="bg sensors">
@@ -336,19 +346,19 @@ sdev:write("somedata") -- writes buffer to serial port
 				<section>
 					<h2>Modbus</h2>
 					<ul>
-						<li>
+						<li class="fragment">
 							Serial or TCP
 							<br>
 							<small>Many devices can be connected in the same network</small>
 						</li>
-						<li>
+						<li class="fragment">
 							2 transmission mode: 'RTU', 'ASCII'
 							<br>
 							<small>
 								Each mode comes with specific encoding, framing and error checksum mecanism
 							</small>
 						</li>
-						<li>
+						<li class="fragment">
 							Manipulates raw data (bits or words)
 							<br>
 							<small>
@@ -395,6 +405,55 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 				<section>
 					<h2>Local communication protocols</h2>
 					<h3>Many more to come! (e.g. GPIO)</h3>
+				</section>
+			</section>
+			<section>
+				<section data-state="hands-on">
+					<h2>
+						Connecting your Raspberry Pi
+						<br/>
+						to the Arduino
+					</h2>
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>Modbus-capable Arduino</h2>
+					<h3>The Arduino we gave you is a Modbus slave</h3>
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>Modbus-capable Arduino</h2>
+					<ul>
+						<li>Registers #00➔#05 = A0➔A5</li>
+						<li>Registers #06➔#11 = D2➔D7 (output)</li>
+						<li>Registers #12➔#16 = D8➔D12 (input)</li>
+						<li>Register #17 = Servo output (D13)</li>
+						<li>Register #18 = # of errors (input)</li>
+						<li>Modbus baud rate: 9600</li>
+					</ul>
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>Your breadboard</h2>
+					<h3>An LED (digital output)</h3>
+					<h3>A photoresistor (analog input)</h3>
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>Schematics</h2>
+					<embed src="svg/schematics_bb.svg" type="image/svg+xml" />
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>Goal</h2>
+					<h3>
+						Improve Mihini app. to communicate
+						<br>with the Arduino over Modbus</h3>
+				</section>
+				<section data-state="bg arduino hands-on">
+					<h2>What you need to know</h2>
+					<ul>
+						<li>
+							Raspberry Pi serial port:
+							<code>/dev/ttyACM0</code>
+						</li>
+					</ul>
+
 				</section>
 			</section>
 			<section>
@@ -635,12 +694,24 @@ racon.triggerpolicy("hourly")
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
+ // Generate a unique id and secret at revealjs.jit.su/token
+    multiplex: {
+        id: '28a25ea16c46dfa5',
+        secret: '13634557480795333820',
+        url: '10.41.51.173:1948'
+    },
+
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugins/highlight.js/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+  { src: 'socket.io/socket.io.js', async: true },
+        { src: 'reveal/plugin/multiplex/client.js', async: true },
+        { src: 'reveal/plugin/multiplex/master.js', async: true },
+
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
 					//{ src: '/socket.io/socket.io.js', async: true },
