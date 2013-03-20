@@ -281,7 +281,15 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<pre><code lang="lua">x = {}</code></pre>
 				</section>
 				<section>
-					<h3>Creating a table</h3>
+					<h3>Creating a table: list</h3>
+					<pre><code lang="lua">x = { 42, "hello" }</code></pre>
+				</section>
+				<section>
+					<h3>Creating a table: array</h3>
+					<pre><code lang="lua">x = { [1] = 123, [2] = "hello" }</code></pre>
+				</section>
+				<section>
+					<h3>Creating a table: associative array</h3>
 					<pre><code lang="lua">x = { value = 123, text = "hello" }</code></pre>
 				</section>
 				<!-- other Lua features??? -->
@@ -312,8 +320,8 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<pre><code lang="lua">
 -- open the serial port
 local serial = require("serial")
-local portconfig = { parity = "none", flowControl = "none", 
-                     numDataBits = 8, numStopBits = 1, baudRate = 115200 }
+local portconfig = { parity="none", flowControl="none",
+                     numDataBits=8, numStopBits=1, baudRate=115200 }
 local sdev = serial.open("/dev/ttyS0", portconfig)
 
 -- Now use it!
@@ -509,8 +517,8 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 				<section>
 					<h2>M3DA Envelope</h2>
 					<h3>
-						Can be put in any other transport layer
-						<br>(HTTP, TCP, UDP, SMS, &hellip;)</h3>
+						Can be put in many transport layer
+						<br>(HTTP, TCP, &hellip;)</h3>
 				</section>
 				<section>
 					<h2>Application layer</h2>
@@ -590,7 +598,7 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 					</section>
 					<section>
 						<h2>Security</h2>
-						<h3>128 or 256 bits RSA encryption</h3>
+						<h3>128 or 256 bits AES encryption</h3>
 					</section>
 					<section>
 						<h2>Security</h2>
@@ -643,13 +651,18 @@ local house = racon.newasset("house")
 						<pre><code lang="lua">
 -- push data to Mihini agent:
 -- timestamped temperature of the bedroom
-house:pushdata("bedroom", { temp=23, timestamp=os.time()}, "hourly")
+house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "now")
+-- at this point the data is in Mihini agent.
 -- `hourly` is the data queue in the agent where the data is stored
 -- each queue is linked to a data policy:
 -- this is how / when the data is *automatically* pushed to server
 
--- you may want to force data flushing from agent to M2M server:
-racon.triggerpolicy("hourly")
+-- send data from agent to M2M server at a slower pace:
+house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
+
+-- for development purpose (or debug),
+-- you may want to force data flushing from agent to server
+-- racon.triggerpolicy("hourly")
                                                 </code></pre>
 					</section>
 					<section>
