@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="src"/>
+	<buildpathentry combineaccessrules="false" kind="prj" path="/org.eclipse.paho.mqtt.lua"/>
+	<buildpathentry kind="con" path="org.eclipse.koneki.ldt.ExecutionEnvironmentContainer/mihini/0.8"/>
+</buildpath>
