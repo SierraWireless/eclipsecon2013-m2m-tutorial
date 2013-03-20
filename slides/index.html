@@ -66,6 +66,14 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>An end-to-end M2M app</h2>
 					<embed src="svg/tutorial%20architecture.svg" type="image/svg+xml" />
 				</section>
+				<section data-state="hands-on">
+					<h2>3 steps</h2>
+					<ol>
+						<li>Basic Lua code for sensor data conversion</li>
+						<li>Raspberry⟺Arduino communication over Modbus</li>
+						<li>M2M data transmission over the air</li>
+					</ol>
+				</section>
 			</section>
 			<section>
 				<section>
@@ -204,6 +212,11 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section data-state="hands-on">
+					<h2> <u>STEP #0</u>
+					</h2>
+					<h3>Setup the development environment</h3>
+				</section>
+				<section data-state="hands-on">
 					<h2>Installing Koneki</h2>
 					<ul>
 						<li>
@@ -221,20 +234,47 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section data-state="hands-on">
 					<h2>First launch</h2>
+					<h3>
+						Launch the LuaDevelopmentTools RCP app
+						<br>you just unpacked</h3>
 				</section>
 				<section data-state="hands-on">
-					<h2>Setup Mihini execution environment</h2>
-					<div>
-						Add the &nbsp;
-						<code>Mihini/mihini-0.8.zip</code>
-						&nbsp; file
-						<br/>
-						in&nbsp;
-						<code>Preferences > Lua > Execution Environments</code>
-						<br/>
-					</div>
-
+					<h2>Configure your remote Raspberry Pi</h2>
 				</section>
+				<section data-state="hands-on">
+					<h2>Create a new RSE connection</h2>
+					<img src="images/lab-screenshots/new-remote-connection.png" />
+				</section>
+				<section data-state="hands-on">
+					<h2>“Lua SSH” system</h2>
+					<img src="images/lab-screenshots/new-lua-ssh.png" />
+				</section>
+				<section data-state="hands-on">
+					<h2>Connection details</h2>
+					<img src="images/lab-screenshots/new-connection-details.png" />
+					<h3 style="color:#c61717">Use the IP address you've been assigned ☺</h3>
+				</section>
+				<section data-state="hands-on">
+					<h2>Remote file system</h2>
+					<img src="images/lab-screenshots/new-sftp.png" />
+				</section>
+				<section data-state="hands-on">
+					<h2>First connection</h2>
+					<img src="images/lab-screenshots/new-ssh-terminal.png" />
+					<div>
+						<ul>
+							<li>
+								User:
+								<code>pi</code>
+							</li>
+							<li>
+								Password:
+								<code>raspberry</code>
+							</li>
+						</ul>
+					</div>
+				</section>
+
 			</section>
 			<section>
 				<section>
@@ -295,7 +335,13 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				<!-- other Lua features??? -->
 			</section>
 			<section>
-				<section data-state="hands-on"></section>
+				<section data-state="hands-on">
+					<h2> <u>STEP #1</u>
+					</h2>
+					<h3>
+						Write simple code that will
+						<br>convert raw sensors values</h3>
+				</section>
 			</section>
 			<section>
 				<section data-state="bg sensors">
@@ -416,12 +462,13 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 				</section>
 			</section>
 			<section>
-				<section data-state="hands-on">
+				<section data-state="bg arduino hands-on">
 					<h2>
-						Connecting your Raspberry Pi
-						<br/>
-						to the Arduino
+						<u>STEP #2</u>
 					</h2>
+					<h3>
+						Improve Mihini app. to communicate
+						<br>with the Arduino over Modbus</h3>
 				</section>
 				<section data-state="bg arduino hands-on">
 					<h2>Modbus-capable Arduino</h2>
@@ -442,16 +489,23 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 					<h2>Your breadboard</h2>
 					<h3>An LED (digital output)</h3>
 					<h3>A photoresistor (analog input)</h3>
+					<h3>A temperature sensor (analog input)</h3>
 				</section>
 				<section data-state="bg arduino hands-on">
 					<h2>Schematics</h2>
 					<embed src="svg/schematics_bb.svg" type="image/svg+xml" />
 				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>Goal</h2>
-					<h3>
-						Improve Mihini app. to communicate
-						<br>with the Arduino over Modbus</h3>
+				<section data-state="hands-on">
+					<h2>Setup Mihini execution environment</h2>
+					<div>
+						Add the &nbsp;
+						<code>Mihini/mihini-0.8.zip</code>
+						&nbsp; file
+						<br/>
+						in&nbsp;
+						<code>Preferences > Lua > Execution Environments</code>
+						<br/>
+					</div>
 				</section>
 				<section data-state="bg arduino hands-on">
 					<h2>What you need to know</h2>
@@ -461,7 +515,6 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 							<code>/dev/ttyACM0</code>
 						</li>
 					</ul>
-
 				</section>
 			</section>
 			<section>
@@ -505,139 +558,142 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 					<h2>Open</h2>
 					<h3 class="fragment">… because vendor lock-in hinders M2M adoption</h3>
 				</section>
+				<!--
 				<section>
-					<embed src="svg/m3da.svg" type="image/svg+xml" />
-				</section>
-				<section>
-					<h2>Transport layer</h2>
-					<h3>
-						Identification, compression,
-						<br>authentication, encryption</h3>
-				</section>
-				<section>
-					<h2>M3DA Envelope</h2>
-					<h3>
+				<embed src="svg/m3da.svg" type="image/svg+xml" />
+			</section>
+			-->
+			<section>
+				<h2>Transport layer</h2>
+				<h3>
+					Identification, compression,
+					<br>authentication, encryption</h3>
+			</section>
+			<section>
+				<h2>M3DA Envelope</h2>
+				<h3>
 						Can be put in many transport layer
 						<br>(HTTP, TCP, &hellip;)</h3>
-				</section>
-				<section>
-					<h2>Application layer</h2>
-					<h3>Two objects to perform tree access</h3>
+			</section>
+			<section>
+				<h2>Application layer</h2>
+				<h3>Two objects to perform tree access</h3>
+				<ul>
+					<li>
+						<code>Message</code>
+					</li>
+					<li>
+						<code>Response</code>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Application layer</h2>
+				<h3>
+					Composite structures are materialized with
+					<br>nodes and leaves in the data tree.</h3>
+			</section>
+			<section>
+				<h2>Application layer - Example</h2>
+				<h3>A GPS position</h3>
+				<div class="tree">
 					<ul>
 						<li>
-							<code>Message</code>
-						</li>
-						<li>
-							<code>Response</code>
-						</li>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gps
+							<ul>
+								<li>lat</li>
+								<li>lon</li>
+								<li>alt</li>
+							</ul>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>M3DA Message</h2>
+					<h3>= a map</h3>
+					<ul>
+						<li>key = path in the tree</li>
+						<li>values = value(s) for that leaf</li>
 					</ul>
 				</section>
 				<section>
-					<h2>Application layer</h2>
-					<h3>
-						Composite structures are materialized with
-						<br>nodes and leaves in the data tree.</h3>
+					<h2>M3DA Message - Example</h2>
+					<embed src="svg/m3da-message.svg" type="image/svg+xml" />
 				</section>
 				<section>
-					<h2>Application layer - Example</h2>
-					<h3>A GPS position</h3>
-					<div class="tree">
-						<ul>
-							<li>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gps
-								<ul>
-									<li>lat</li>
-									<li>lon</li>
-									<li>alt</li>
-								</ul>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<h2>M3DA Message</h2>
-						<h3>= a map</h3>
-						<ul>
-							<li>key = path in the tree</li>
-							<li>values = value(s) for that leaf</li>
-						</ul>
-					</section>
-					<section>
-						<h2>M3DA Message - Example</h2>
-						<embed src="svg/m3da-message.svg" type="image/svg+xml" />
-					</section>
-					<section>
-						<h2>Commands, Events, Acks</h2>
-						<h3>= Conventions on the tree</h3>
-						<div>e.g. a 'commands' sub-branch</div>
-					</section>
-					<section>
-						<h2>Command - Example</h2>
-						<embed src="svg/m3da-command.svg" type="image/svg+xml" />
-					</section>
-					<section>
-						<h2>M3DA Response</h2>
-						<h3>= a status code + optional payload</h3>
-					</section>
-					<section>
-						<h2>Response - Example</h2>
-						<embed src="svg/m3da-response.svg" type="image/svg+xml" />
-					</section>
-					<section>
-						<h2>Payload serialization</h2>
-						<h3>Bysant</h3>
-					</section>
-					<!-- TODO -->
-					<section>
-						<h2>Security</h2>
-						<h3>Confidentiality, low overhead</h3>
-					</section>
-					<section>
-						<h2>Security</h2>
-						<h3>Protection against replay attacks</h3>
-						<div>(randomly generated nonce for each single message)</div>
-					</section>
-					<section>
-						<h2>Security</h2>
+					<h2>Commands, Events, Acks</h2>
+					<h3>= Conventions on the tree</h3>
+					<div>e.g. a 'commands' sub-branch</div>
+				</section>
+				<section>
+					<h2>Command - Example</h2>
+					<embed src="svg/m3da-command.svg" type="image/svg+xml" />
+				</section>
+				<section>
+					<h2>M3DA Response</h2>
+					<h3>= a status code + optional payload</h3>
+				</section>
+				<section>
+					<h2>Response - Example</h2>
+					<embed src="svg/m3da-response.svg" type="image/svg+xml" />
+				</section>
+				<section>
+					<h2>Payload serialization</h2>
+					<h3>Bysant</h3>
+				</section>
+				<!-- TODO -->
+				<section>
+					<h2>Security</h2>
+					<h3>Confidentiality, low overhead</h3>
+				</section>
+				<section>
+					<h2>Security</h2>
+					<h3>Protection against replay attacks</h3>
+					<div>(randomly generated nonce for each single message)</div>
+				</section>
+				<section>
+					<h2>Security</h2>
 						<h3>128 or 256 bits AES encryption</h3>
-					</section>
-					<section>
-						<h2>Security</h2>
-						<h3>Very low overhead</h3>
-						<div>
-							<ul>
-								<li> <strong>SSL/TLS</strong>
-									= 12 packets before being able
-									<br>to start a secure communication</li>
-								<li> <strong>M3DA</strong>
-									= <u>none</u>
-								</li>
-							</ul>
-						</div>
-					</section>
 				</section>
 				<section>
-					<section>
-						<h2>
-							Mihini API for
-							<br>over-the-air communications</h2>
-						<h3></h3>
-						<h3></h3>
-						<h4>M3DA library provided in C and Lua</h4>
-					</section>
-					<section>
-						<h2>Data flow</h2>
-						<h3>Three main steps:</h3>
-						<div>
-							<ol>
-								<li class="fragment">Data is generated/acquired in asset application</li>
-								<li class="fragment">Data is pushed to Mihini agent using Racon lib</li>
-								<li class="fragment">Data is pushed to M2M Server using M3DA protocol</li>
-							</ol>
-						</div>
-					</section>
-					<section>
-						<h3>Lua Library initialization</h3>
-						<pre><code lang="lua">
+					<h2>Security</h2>
+					<h3>Very low overhead</h3>
+					<div>
+						<ul>
+							<li> <strong>SSL/TLS</strong>
+								= 12 packets before being able
+								<br>to start a secure communication</li>
+							<li> <strong>M3DA</strong>
+								=
+								<u>none</u>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>
+						Mihini API for
+						<br>over-the-air communications</h2>
+					<h3></h3>
+					<h3></h3>
+					<h4>M3DA library provided in C and Lua</h4>
+				</section>
+				<section>
+					<h2>Data flow</h2>
+					<h3>Three main steps:</h3>
+					<div>
+						<ol>
+							<li class="fragment">Data is generated/acquired in asset application</li>
+							<li class="fragment">Data is pushed to Mihini agent using Racon lib</li>
+							<li class="fragment">Data is pushed to M2M Server using M3DA protocol</li>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<h3>Lua Library initialization</h3>
+					<pre><code lang="lua">
 -- load the module
 local racon = require("racon")
 -- create an `asset`:
@@ -645,10 +701,10 @@ local racon = require("racon")
 -- identified by unique id
 local house = racon.newasset("house")
 						</code></pre>
-					</section>
-					<section>
-						<h3>Pushing data</h3>
-						<pre><code lang="lua">
+				</section>
+				<section>
+					<h3>Pushing data</h3>
+					<pre><code lang="lua">
 -- push data to Mihini agent:
 -- timestamped temperature of the bedroom
 house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "now")
@@ -664,37 +720,55 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 -- you may want to force data flushing from agent to server
 -- racon.triggerpolicy("hourly")
                                                 </code></pre>
-					</section>
-					<section>
-						<h3>Going Further</h3>
-						<div>
-							<ul>
-								<li>Data reception</li>
-								<li>
-									Advanced data sending:
-									<ul>
-										<li>structured and optimized data</li>
-										<li>data consolidation</li>
-										<li>...</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<!-- TODO -->
-					</section>
 				</section>
 				<section>
-					<section>
-						<h1>Thanks!</h1>
-					</section>
+					<h3>Going Further</h3>
+					<div>
+						<ul>
+							<li>Data reception</li>
+							<li>
+								Advanced data sending:
+								<ul>
+									<li>structured and optimized data</li>
+									<li>data consolidation</li>
+									<li>...</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</section>
-			</div>
+				<section>
+					<!-- TODO -->
+				</section>
+			</section>
+			<section>
+				<section data-state="hands-on">
+					<h2>
+						<u>STEP #3</u>
+					</h2>
+					<h3>
+						Send sensor data &amp; control actuators
+						<br>using M3DA</h3>
+				</section>
+				<section data-state="hands-on">
+					<h2>Make sure you start the Mihini agent</h2>
+				</section>
+				<section data-state="hands-on">
+					<h2>
+						Using the Mihini shell to change your RaspPi communication ID
+					</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Thanks!</h1>
+				</section>
+			</section>
 		</div>
-		<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
-		<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
+	</div>
+	<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
+	<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -707,12 +781,12 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
- // Generate a unique id and secret at revealjs.jit.su/token
-    multiplex: {
-        id: '28a25ea16c46dfa5',
-        secret: '13634557480795333820',
-        url: '10.41.51.173:1948'
-    },
+				// Generate a unique id and secret at revealjs.jit.su/token
+					multiplex: {
+					id: '28a25ea16c46dfa5',
+					secret: '13634557480795333820',
+					url: '192.168.0.10:1948'
+				},
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
@@ -721,9 +795,9 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugins/highlight.js/highlight.pack.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 
-  { src: 'socket.io/socket.io.js', async: true },
-        { src: 'reveal/plugin/multiplex/client.js', async: true },
-        { src: 'reveal/plugin/multiplex/master.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+					{ src: 'reveal/plugin/multiplex/client.js', async: true },
+					{ src: 'reveal/plugin/multiplex/master.js', async: true },
 
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
@@ -735,4 +809,4 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 
 		</script>
 </body>
-	</html>
+</html>
