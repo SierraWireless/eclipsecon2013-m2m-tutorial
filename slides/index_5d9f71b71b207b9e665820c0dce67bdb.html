@@ -42,20 +42,36 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section data-state="bg wifi">
 					<h2>Before we get started&hellip;</h2>
-					<h3>WIFI: MIHINI-TUTORIAL</h3>
-					<h3>Slides: http://192.168.0.10:1948</h3>
+					<div>
+						<ul>
+							<li>
+								Wi-Fi:
+								<code>MIHINI-TUTORIAL</code>
+							</li>
+							<li>
+								Live slide deck:
+								<a href="http://192.168.0.10:1948">http://192.168.0.10:1948</a>
+							</li>
+							<li>
+								Copy the contents of the USB stick on your machine,
+								<br>
+								&hellip;or browse its content
+								<a href="http://192.168.0.10:1948/USB_STICK">HERE</a>
+								anytime.
+							</li>
+						</ul>
+					</div>
 				</section>
-
 				<section data-state="bg learning">
 					<h2>What you will learn today</h2>
 					<div>
 						<ul>
-							<li class="fragment">What is Mihini</li>
-							<li class="fragment">What are the tools to develop Mihini apps</li>
-							<li class="fragment">Basic Lua programming</li>
-							<li class="fragment">How to connect an embedded device to sensors</li>
-							<li class="fragment">How to push data to a server</li>
-							<li class="fragment"> <i>(How to create a fancy end-user app)</i>
+							<li class="fragment-disabled">What is Mihini</li>
+							<li class="fragment-disabled">What are the tools to develop Mihini apps</li>
+							<li class="fragment-disabled">Basic Lua programming</li>
+							<li class="fragment-disabled">How to connect an embedded device to sensors</li>
+							<li class="fragment-disabled">How to push data to a server</li>
+							<li class="fragment-disabled"> <i>(How to create a fancy end-user app)</i>
 							</li>
 						</ul>
 					</div>
@@ -77,117 +93,19 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section>
-					<h2>Mihini</h2>
-					<h3 class="fragment">Embedded M2M application framework</h3>
-				</section>
-				<section>
-					<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
-						<h2>Application Framework</h2>
-						<h2>+</h2>
-						<h2>Agent</h2>
-					</div>
-				</section>
-				<section>
-					<h2>Mihini Application Framework</h2>
-					<div>
-						<h3>
-							<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
-						</h3>
-						<div>
-							<ul>
-								<li>Serial and I/O management,</li>
-								<li>Networking (FTP, HTTP, e-mail, …),</li>
-								<li>GPS,</li>
-								<li>Cryptography,</li>
-								<li>Modbus,</li>
-								<li>Local storage</li>
-								<li>etc.</li>
-							</ul>
-						</div>
-					</div>
-					<div>
-						<br></div>
-				</section>
-				<section>
-					<h2>Mihini Agent</h2>
-					<div>
-						<ul>
-							<li>
-								Data queues
-								<br></li>
-							<li>
-								Network bearers
-								<br></li>
-							<li>
-								Device management
-								<br></li>
-							<li>
-								Application container
-								<br></li>
-							<li>
-								Application configuration
-								<br></li>
-						</ul>
-					</div>
-				</section>
-				<section>
-					<h2>Mihini architecture</h2>
-					<embed src="images/Mihini_Architecture.png" type="image/png" />
-				</section>
-			</section>
-			<section>
-				<section>
 					<h2>Koneki</h2>
-					<h3 class="fragment">Tools for M2M developers</h3>
+					<h3 class="fragment-disabled">Tools for M2M developers</h3>
 				</section>
 				<section>
 					<h2>Help developers&hellip;</h2>
-					<h3 class="fragment">write code</h3>
-					<h3 class="fragment">simulate</h3>
-					<h3 class="fragment">debug</h3>
-					<h3 class="fragment">deploy</h3>
-				</section>
-				<section>
-					<h2>OMA-DM Simulator</h2>
+					<h3 class="fragment-disabled">write code</h3>
+					<h3 class="fragment-disabled">simulate</h3>
+					<h3 class="fragment-disabled">debug</h3>
+					<h3 class="fragment-disabled">deploy</h3>
 				</section>
 				<section>
 					<h2>Lua Development Tools</h2>
-				</section>
-				<section>
-					<h2>Code completion</h2>
-					<img src="images/ldt-screenshots/screenCodeCompletion.png" alt="Code completion" />
-				</section>
-				<section>
-					<h2>Templates</h2>
-					<img src="images/ldt-screenshots/screenTemplate.png" alt="Templates" />
-				</section>
-				<section>
-					<h2>Debugger</h2>
-					<img src="images/ldt-screenshots/screenDebugger.png" alt="Debugger" />
-				</section>
-				<section>
-					<h2>Syntax coloring</h2>
-					<img src="images/ldt-screenshots/screenVariableHighlight.png" alt="Syntax coloring" />
-				</section>
-				<section>
-					<h2>Error markers</h2>
-					<img src="images/ldt-screenshots/screenErrorMarker.png" alt="Error markers" />
-				</section>
-				<section>
-					<h2>Outline</h2>
-					<img src="images/ldt-screenshots/screenOutline.png" alt="Outline" />
-				</section>
-				<section>
-					<h2>Formatter</h2>
-					<img src="images/ldt-screenshots/screenFormatter.png" alt="Formatter" />
-				</section>
-				<section>
-					<h2>Navigation</h2>
-					<img src="images/ldt-screenshots/screenCodeNavigation.png" alt="Code navigation" />
-				</section>
-				<section>
-					<h2>Cross-platform</h2>
-					<img src="images/ldt-screenshots/screenCrossPlatform.png" alt="Cross platform" />
+					<h3>All the magic you expect from an IDE</h3>
 				</section>
 				<section>
 					<h2>Lua Development Tools for Mihini</h2>
@@ -200,12 +118,12 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Target Management</h2>
-					<h3>LDT leverages Eclipse RSE to interact with Mihini:</h3>
+					<h3>LDT leverages Eclipse RSE to interact with Mihini</h3>
 					<div>
 						<ul>
-							<li class="fragment">shell</li>
-							<li class="fragment">script deployment</li>
-							<li class="fragment">remote debug</li>
+							<li class="fragment-disabled">shell</li>
+							<li class="fragment-disabled">script deployment</li>
+							<li class="fragment-disabled">remote debug</li>
 						</ul>
 					</div>
 				</section>
@@ -286,17 +204,17 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				<section data-state="bg moon">
 					<h2>What is Lua?</h2>
 					<ul>
-						<li class="fragment">High-level programming language</li>
-						<li class="fragment">Scripting</li>
-						<li class="fragment">Simple</li>
-						<li class="fragment">Extensible</li>
-						<li class="fragment">Portable</li>
+						<li class="fragment-disabled">High-level programming language</li>
+						<li class="fragment-disabled">Scripting</li>
+						<li class="fragment-disabled">Simple</li>
+						<li class="fragment-disabled">Extensible</li>
+						<li class="fragment-disabled">Portable</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Hello World</h2>
 					<pre><code class="lua">print('Hello World')</code></pre>
-					<h4 class="fragment">Easy, eh?</h4>
+					<h4 class="fragment-disabled">Easy, eh?</h4>
 				</section>
 				<section>
 					<h2>Functions</h2>
@@ -313,11 +231,11 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>
 						Tables are used for
 						<br>storing collections</h2>
-					<h3 class="fragment">lists, sets, arrays, associative arrays</h3>
+					<h3 class="fragment-disabled">lists, sets, arrays, associative arrays</h3>
 				</section>
 				<section>
 					<h2>&hellip; that contain other objects</h2>
-					<h3 class="fragment">numbers, strings, or even other aggregates</h3>
+					<h3 class="fragment-disabled">numbers, strings, or even other aggregates</h3>
 				</section>
 				<section>
 					<h3>Creating a table</h3>
@@ -347,20 +265,20 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section data-state="hands-on">
 					<h2>Your first Lua script</h2>
-					<h3>4 steps:</h3>
 					<ol>
-						<li> Your hello world :)</li>
-						<li> Create a new function and call it</li>
-						<li> Improve the function to do the conversion</li>
-						<li> Clean and make the code a module </li>
+						<li>Your hello world :)</li>
+						<li>Create a new function and call it</li>
+						<li>Improve the function to do the conversion</li>
+						<li>Clean and make the code a module</li>
 					</ol>
 
 				</section>
 
 				<section data-state="hands-on">
 					<h2>Step #1.1</h2>
-					A new project comes with a main.lua file with a main function.
-                    <br>Add in the main function:
+					Create a new file
+					<code>main.lua</code>
+					file:
 					<pre><code class="lua">print("my hello world")</code></pre>
 				</section>
 
@@ -374,14 +292,15 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					Create a function:
 					<ul>
 						<li>takes one argument</li>
-						<li>returns one value
-						   <br>(you can leave value conversion for next sub-step)</li>
+						<li>
+							returns one value
+							<br>(you can leave value conversion for next sub-step)</li>
 					</ul>
 				</section>
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
-					It should looks like this:
-<pre><code class="lua">-- make the fct `local` not to mess with global env.
+					It should look like this:
+					<pre><code class="lua">-- make the fonction `local` not to mess with global env.
 local function convert (raw_value)
     return(raw_value) --no conversion for now
 end
@@ -390,14 +309,15 @@ end
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
 					Now create a list of integer values ( in 0 to 1023) and call the function with each value
-
-					<br><small>This a simple list iteration:
-                    <br>don't forget to use Koneki auto-complete and templates features!!</small>
+					<br>
+					<small>
+						This a simple list iteration, don't forget to use Koneki auto-complete!!
+					</small>
 				</section>
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
-                                        It should looks like this:
-<pre><code class="lua">-- make the fct `local` not to mess with global env.
+					It should look like this:
+					<pre><code class="lua">-- make the fonction `local` not to mess with global env.
 local function convert (raw_value)
     return(raw_value) --no conversion for now
 end
@@ -410,33 +330,35 @@ for key, raw_value in ipairs(values) do
     print(string.format("Raw value: %d means %d °C", raw_value, temp))
 end
 </code></pre>
-			</section>
+				</section>
 				<section data-state="hands-on">
-                                        <h2>Step #1.3</h2>
-                                        <h3>Now do the conversion:</h3>
-					<!--<embed src="svg/data_conversion.svg" type="image/svg+xml" />-->
-					Lua &lt--&gt Serial &lt--&gt Arduino ADC &lt--&gt Temp sensor
-					<div class="fragment">
-					<br><br>2 conversions apply
-					<ul>
-						<li>Temperature sensor: 10mV is 1°C</li>
-						<li>Arduino ADC: [0V ; 5V] becomes [0 ; 1024]</li>
-					</ul>
+					<h2>Step #1.3</h2>
+					<h3>Now do the conversion:</h3>
+					<!--<embed src="svg/data_conversion.svg" type="image/svg+xml" />
+					-->
+					Lua⟷Modbus⟷Arduino ADC⟷Temp sensor
+					<div class="fragment-disabled">
+						<br>
+						<br>
+						2 conversions apply
+						<ul>
+							<li>Temperature sensor: 10mV is 1°C</li>
+							<li>Arduino ADC: [0V ; 5V] becomes [0 ; 1024]</li>
+						</ul>
 					</div>
 				</section>
 				<section  data-state="hands-on">
-                                        <h2>Step #1.3</h2>
+					<h2>Step #1.3</h2>
 					2 cross-multiplication operations gives:
 					<ul>
-						<li>Temp = Volt * 100 </li>
-						<li>Volt = ADCvalue * 5 / 1024 </li>
-					<ul>
-					<br>Temp = ADCvalue * 5 * 100 / 1024
-				</section>
+						<li>Temp = Voltage * 100</li>
+						<li>Voltage = ADCvalue * 5 / 1024</li>
+						<ul>
+							<br>Temp = ADCvalue * 5 * 100 / 1024</section>
 				<section data-state="hands-on">
-                                        <h2>Step #1.3</h2>
-					The code becomes:
-					<pre><code class="lua">-- make the fct `local` not to mess with global env.
+							<h2>Step #1.3</h2>
+							The code becomes:
+							<pre><code class="lua">-- make the fct `local` not to mess with global env.
 local function convert(raw_value)
     return raw_value * 5 * 100 / 1024
 end
@@ -449,26 +371,33 @@ for key, raw_value in ipairs(values) do
     print(string.format("Raw value: %d means %d °C", raw_value, temp))
 end
 </code></pre>
-				</section>
+						</section>
 				<section data-state="hands-on">
-                                        <h2>Step #1.4</h2>
-					<h3>Clean the file</h3>
+							<h2>Step #1.4</h2>
+							<h3>Clean the file</h3>
 
-					<br>Conversion will be done using modbus values in next STEP
-					<br>You can remove the iteration and value lis
-					<br><small>(or comment it)</small>
+							<br>
+							Conversion will be done using modbus values in next STEP
+							<br>
+							You can remove the iteration and value lis
+							<br>
+							<small>(or comment it)</small>
 
-				</section>
+						</section>
 				<section data-state="hands-on">
-                                        <h2>Step #1.4</h2>
-					<h3>Make the file a module</h3>
-					<br>Module is a Lua convention to make a Lua file easily loadable from another one.
-					<br><br>How we recommend to do it:
-						<br>The module file returns a table containing the public API of the module.
-				</section>
+							<h2>Step #1.4</h2>
+							<h3>Make the file a module</h3>
+							<br>
+							Module is a Lua convention to make a Lua file easily loadable from another one.
+							<br>
+							<br>
+							How we recommend to do it:
+							<br>
+							The module file returns a table containing the public API of the module.
+						</section>
 				<section data-state="hands-on">
-                                        <h2>Step #1.4</h2>
-					The code becomes:
+							<h2>Step #1.4</h2>
+							The code becomes:
 <pre><code class="lua">--- Contains utility function used by Greenhouse demo 
 --@module utils
 
@@ -481,29 +410,88 @@ end
 
 return M
 </code></pre>
-				</section>
-			</section>
-			<section>
-				<section data-state="bg sensors">
-					<h2>Local Communication</h2>
-				</section>
-				<section>
-					<h2>
-						M2M is about bridging machines
-						<br/>
-						(sensors & actuators)
-						<br/>
-						to the Internet
-					</h2>
-				</section>
-				<section>
-					<h2>
-						Mihini provides API to communicate
-						<br>with these machines</h2>
-				</section>
-				<section>
-					<h2>Serial port API</h2>
-					<pre><code class="lua">
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>Mihini</h2>
+							<h3 class="fragment-disabled">Embedded M2M application framework</h3>
+						</section>
+						<section>
+							<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
+								<h2>Application Framework</h2>
+								<h2>+</h2>
+								<h2>Agent</h2>
+							</div>
+						</section>
+						<section>
+							<h2>Mihini Application Framework</h2>
+							<div>
+								<h3>
+									<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
+								</h3>
+								<div>
+									<ul>
+										<li>Serial and I/O management</li>
+										<li>Networking (FTP, HTTP, e-mail, …)</li>
+										<li>Scheduler</li>
+										<li>Industrial protocols (Modbus, …)</li>
+										<li>Local storage</li>
+										<li>etc.</li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<br></div>
+						</section>
+						<section>
+							<h2>Mihini Agent</h2>
+							<div>
+								<ul>
+									<li>
+										Data queues
+										<br></li>
+									<li>
+										Network bearers
+										<br></li>
+									<li>
+										Device management
+										<br></li>
+									<li>
+										Application container
+										<br></li>
+									<li>
+										Application configuration
+										<br></li>
+								</ul>
+							</div>
+						</section>
+						<section>
+							<h2>Mihini architecture</h2>
+							<embed src="images/Mihini_Architecture.png" type="image/png" />
+						</section>
+					</section>
+					<section>
+						<section data-state="bg sensors">
+							<h2>Local Communication</h2>
+						</section>
+						<section>
+							<h2>
+								M2M is about bridging machines
+								<br/>
+								(sensors & actuators)
+								<br/>
+								to the Internet
+							</h2>
+						</section>
+						<section>
+							<h2>
+								Mihini provides API to communicate
+								<br>with these machines</h2>
+						</section>
+						<section>
+							<h2>Serial port API</h2>
+							<pre><code class="lua">
 -- open the serial port
 local serial = require("serial")
 local portconfig = { parity="none", flowControl="none",
@@ -516,56 +504,56 @@ local read_data = sdev:read(2) -- reads 2 bytes on serial port
 
 sdev:write("somedata") -- writes buffer to serial port
 </code></pre>
-				</section>
-				<section>
-					<h2>Modbus</h2>
-					<ul>
-						<li class="fragment">
-							Industrial communication protocol
-							<br>
-							<small>De facto standard created by Modicon/Schneider Electric</small>
-						</li>
-						<li class="fragment">
-							Application layer protocol
-							<br>stateless client-server protocol</li>
-						<li class="fragment">
-							Transactions
+						</section>
+						<section>
+							<h2>Modbus</h2>
 							<ul>
-								<li>request by a client (= master)</li>
-								<li>response by the server (= slave)</li>
+								<li class="fragment-disabled">
+									Industrial communication protocol
+									<br>
+									<small>De facto standard created by Modicon/Schneider Electric</small>
+								</li>
+								<li class="fragment-disabled">
+									Application layer protocol
+									<br>stateless client-server protocol</li>
+								<li class="fragment-disabled">
+									Transactions
+									<ul>
+										<li>request by a client (= master)</li>
+										<li>response by the server (= slave)</li>
+									</ul>
+								</li>
 							</ul>
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Modbus</h2>
-					<ul>
-						<li class="fragment">
-							Serial or TCP
-							<br>
-							<small>Many devices can be connected in the same network</small>
-						</li>
-						<li class="fragment">
-							2 transmission mode: 'RTU', 'ASCII'
-							<br>
-							<small>
-								Each mode comes with specific encoding, framing and error checksum mecanism
-							</small>
-						</li>
-						<li class="fragment">
-							Manipulates raw data (bits or words)
-							<br>
-							<small>
-								Data type names are related to PLC/relays context: coil, discrete input, ...
-							</small>
-						</li>
-					</ul>
-					<!-- http://jamod.sourceforge.net/kbase/protocol.html -->
-				</section>
-				<section>
-					<h2>Modbus Lua API</h2>
-					<h3>Initializing the client protocol stack</h3>
-					<pre><code class="lua">
+						</section>
+						<section>
+							<h2>Modbus</h2>
+							<ul>
+								<li class="fragment-disabled">
+									Serial or TCP
+									<br>
+									<small>Many devices can be connected in the same network</small>
+								</li>
+								<li class="fragment-disabled">
+									2 transmission mode: 'RTU', 'ASCII'
+									<br>
+									<small>
+										Each mode comes with specific encoding, framing and error checksum mecanism
+									</small>
+								</li>
+								<li class="fragment-disabled">
+									Manipulates raw data (bits or words)
+									<br>
+									<small>
+										Data type names are related to PLC/relays context: coil, discrete input, ...
+									</small>
+								</li>
+							</ul>
+							<!-- http://jamod.sourceforge.net/kbase/protocol.html -->
+						</section>
+						<section>
+							<h2>Modbus Lua API</h2>
+							<h3>Initializing the client protocol stack</h3>
+							<pre><code class="lua">
 -- load the module
 local modbus = require("modbus")
 
@@ -578,11 +566,11 @@ local portcfg = { parity="none", flowControl="none", numDataBits=8,
 -- and selecting modbus transmission mode.
 local mdev = modbus.new("/dev/ttyACM0", portcfg, "RTU")
 </code></pre>
-				</section>
-				<section>
-					<h2>Modbus Lua API</h2>
-					<h3>Sending / Reading data</h3>
-					<pre><code class="lua">
+						</section>
+						<section>
+							<h2>Modbus Lua API</h2>
+							<h3>Sending / Reading data</h3>
+							<pre><code class="lua">
 -- reads 2 registers (16 bits word) on slave id 10 at address 42.
 local input_buffer = mdev:readHoldingRegisters(10, 42, 2)
 
@@ -595,245 +583,255 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 
 -- Many other way to read/write data to a Modbus device!
 </code></pre>
-				</section>
-				<section>
-					<h2>Local communication protocols</h2>
-					<h3>Many more to come! (e.g. GPIO)</h3>
-				</section>
-			</section>
-			<section>
-				<section data-state="bg arduino hands-on">
-					<h2>
-						<u>STEP #2</u>
-					</h2>
-					<h3>
-						Improve Mihini app. to communicate
-						<br>with the Arduino over Modbus</h3>
-				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>Modbus-capable Arduino</h2>
-					<h3>The Arduino we gave you is a Modbus slave</h3>
-				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>Modbus-capable Arduino</h2>
-					<ul>
-						<li>Registers #00➔#05 = A0➔A5</li>
-						<li>Registers #06➔#11 = D2➔D7 (output)</li>
-						<li>Registers #12➔#16 = D8➔D12 (input)</li>
-						<li>Register #17 = Servo output (D13)</li>
-						<li>Register #18 = # of errors (input)</li>
-						<li>Modbus baud rate: 9600</li>
-					</ul>
-				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>Your breadboard</h2>
-					<h3>An LED (digital output)</h3>
-					<h3>A photoresistor (analog input)</h3>
-					<h3>A temperature sensor (analog input)</h3>
-				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>Schematics</h2>
-					<embed src="svg/schematics_bb.svg" type="image/svg+xml" />
-				</section>
-				<section data-state="hands-on">
-					<h2>Setup Mihini execution environment</h2>
-					<div>
-						Add the &nbsp;
-						<code>Mihini/mihini-0.8.zip</code>
-						&nbsp; file
-						<br/>
-						in&nbsp;
-						<code>Preferences > Lua > Execution Environments</code>
-						<br/>
-					</div>
-				</section>
-				<section data-state="bg arduino hands-on">
-					<h2>What you need to know</h2>
-					<ul>
-						<li>
-							Raspberry Pi serial port:
-							<code>/dev/ttyACM0</code>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>Sending data to an M2M server</h2>
-					<h3>can be very bandwidth-consuming:</h3>
-					<div>
-						<ul>
-							<li>Lots of sensors</li>
-							<li>Lots of data samples</li>
-						</ul>
-					</div>
-				</section>
-				<section data-state="bg security">
-					<h2>
-						Over-the-air transmission
-						<br/>
-						needs to be secure
-					</h2>
-				</section>
-				<section data-state="bg commands">
-					<h2>And what about commands?</h2>
-				</section>
-				<section>
-					<h1>M3DA</h1>
-					<h2 class="fragment">Micro M2M Data Access</h2>
-				</section>
-				<section data-state="bg compact">
-					<h2>Compact</h2>
-					<h3 class="fragment">… because in the wireless world, data overhead costs money</h3>
-				</section>
-				<section data-state="bg interoperable">
-					<h2>Interoperable</h2>
-					<h3 class="fragment">… because the M2M communication chain is heterogeneous</h3>
-				</section>
-				<section data-state="bg secure">
-					<h2>Secure</h2>
-					<h3 class="fragment">… because security is #1 concern for M2M adopters</h3>
-				</section>
-				<section data-state="bg open">
-					<h2>Open</h2>
-					<h3 class="fragment">… because vendor lock-in hinders M2M adoption</h3>
-				</section>
-				<!--
-				<section>
-				<embed src="svg/m3da.svg" type="image/svg+xml" />
-			</section>
-			-->
-			<section>
-				<h2>Transport layer</h2>
-				<h3>
-					Identification, compression,
-					<br>authentication, encryption</h3>
-			</section>
-			<section>
-				<h2>M3DA Envelope</h2>
-				<h3>
-					Can be put in many transport layer
-					<br>(HTTP, TCP, &hellip;)</h3>
-			</section>
-			<section>
-				<h2>Application layer</h2>
-				<h3>Two objects to perform tree access</h3>
-				<ul>
-					<li>
-						<code>Message</code>
-					</li>
-					<li>
-						<code>Response</code>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Application layer</h2>
-				<h3>
-					Composite structures are materialized with
-					<br>nodes and leaves in the data tree.</h3>
-			</section>
-			<section>
-				<h2>Application layer - Example</h2>
-				<h3>A GPS position</h3>
-				<div class="tree">
-					<ul>
-						<li>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gps
+						</section>
+						<section>
+							<h2>Local communication protocols</h2>
+							<h3>Many more to come! (e.g. GPIO)</h3>
+						</section>
+					</section>
+					<section>
+						<section data-state="bg arduino hands-on">
+							<h2>
+								<u>STEP #2</u>
+							</h2>
+							<h3>
+								Improve Mihini app. to communicate
+								<br>with the Arduino over Modbus</h3>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Modbus-capable Arduino</h2>
+							<h3>The Arduino we gave you is a Modbus slave</h3>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Modbus-capable Arduino</h2>
 							<ul>
-								<li>lat</li>
-								<li>lon</li>
-								<li>alt</li>
+								<li>Registers #00➔#05 = A0➔A5</li>
+								<li>Registers #06➔#11 = D2➔D7 (output)</li>
+								<li>Registers #12➔#16 = D8➔D12 (input)</li>
+								<li>Modbus baud rate: 9600</li>
 							</ul>
-						</ul>
-					</div>
-				</section>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Your breadboard</h2>
+							<h3>
+								A photoresistor on
+								<u>A0</u>
+								(analog input)
+							</h3>
+							<h3>
+								A temperature sensor on
+								<u>A1</u>
+								(analog input)
+							</h3>
+							<h3>
+								An LED on
+								<u>D7</u>
+								(digital output)
+							</h3>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Schematics</h2>
+							<embed src="svg/schematics_bb.svg" type="image/svg+xml" />
+						</section>
+						<section data-state="hands-on">
+							<h2>Setup Mihini execution environment</h2>
+							<div>
+								Add the &nbsp;
+								<code>Mihini/mihini-0.8.zip</code>
+								&nbsp; file
+								<br/>
+								in&nbsp;
+								<code>Preferences > Lua > Execution Environments</code>
+								<br/>
+							</div>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>What you need to know</h2>
+							<ul>
+								<li>
+									Raspberry Pi serial port:
+									<code>/dev/ttyACM0</code>
+								</li>
+							</ul>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>Sending data to an M2M server</h2>
+							<h3>can be very bandwidth-consuming:</h3>
+							<div>
+								<ul>
+									<li>Lots of sensors</li>
+									<li>Lots of data samples</li>
+								</ul>
+							</div>
+						</section>
+						<section data-state="bg security">
+							<h2>
+								Over-the-air transmission
+								<br/>
+								needs to be secure
+							</h2>
+						</section>
+						<section data-state="bg commands">
+							<h2>And what about commands?</h2>
+						</section>
+						<section>
+							<h1>M3DA</h1>
+							<h2 class="fragment-disabled">Micro M2M Data Access</h2>
+						</section>
+						<section data-state="bg compact">
+							<h2>Compact</h2>
+							<h3 class="fragment-disabled">… because in the wireless world, data overhead costs money</h3>
+						</section>
+						<section data-state="bg interoperable">
+							<h2>Interoperable</h2>
+							<h3 class="fragment-disabled">… because the M2M communication chain is heterogeneous</h3>
+						</section>
+						<section data-state="bg secure">
+							<h2>Secure</h2>
+							<h3 class="fragment-disabled">… because security is #1 concern for M2M adopters</h3>
+						</section>
+						<section data-state="bg open">
+							<h2>Open</h2>
+							<h3 class="fragment-disabled">… because vendor lock-in hinders M2M adoption</h3>
+						</section>
+						<!--
 				<section>
-					<h2>M3DA Message</h2>
-					<h3>= a map</h3>
-					<ul>
-						<li>key = path in the tree</li>
-						<li>values = value(s) for that leaf</li>
-					</ul>
-				</section>
-				<section>
-					<h2>M3DA Message - Example</h2>
-					<embed src="svg/m3da-message.svg" type="image/svg+xml" />
-				</section>
-				<section>
-					<h2>Commands, Events, Acks</h2>
-					<h3>= Conventions on the tree</h3>
-					<div>e.g. a 'commands' sub-branch</div>
-				</section>
-				<section>
-					<h2>Command - Example</h2>
-					<embed src="svg/m3da-command.svg" type="image/svg+xml" />
-				</section>
-				<section>
-					<h2>M3DA Response</h2>
-					<h3>= a status code + optional payload</h3>
-				</section>
-				<section>
-					<h2>Response - Example</h2>
-					<embed src="svg/m3da-response.svg" type="image/svg+xml" />
-				</section>
-				<section>
-					<h2>Payload serialization</h2>
-					<h3>Bysant</h3>
-				</section>
-				<!-- TODO -->
-				<section>
-					<h2>Security</h2>
-					<h3>Confidentiality, low overhead</h3>
-				</section>
-				<section>
-					<h2>Security</h2>
-					<h3>Protection against replay attacks</h3>
-					<div>(randomly generated nonce for each single message)</div>
-				</section>
-				<section>
-					<h2>Security</h2>
-					<h3>128 or 256 bits AES encryption</h3>
-				</section>
-				<section>
-					<h2>Security</h2>
-					<h3>Very low overhead</h3>
-					<div>
+						<embed src="svg/m3da.svg" type="image/svg+xml" />
+					</section>
+					-->
+					<section>
+						<h2>Transport layer</h2>
+						<h3>
+							Identification, compression,
+							<br>authentication, encryption</h3>
+					</section>
+					<section>
+						<h2>M3DA Envelope</h2>
+						<h3>
+							Can be put in many transport layer
+							<br>(HTTP, TCP, &hellip;)</h3>
+					</section>
+					<section>
+						<h2>Application layer</h2>
+						<h3>Two objects to perform tree access</h3>
 						<ul>
-							<li> <strong>SSL/TLS</strong>
-								= 12 packets before being able
-								<br>to start a secure communication</li>
-							<li> <strong>M3DA</strong>
-								=
-								<u>none</u>
+							<li>
+								<code>Message</code>
+							</li>
+							<li>
+								<code>Response</code>
 							</li>
 						</ul>
-					</div>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>
-						Mihini API for
-						<br>over-the-air communications</h2>
-					<h3></h3>
-					<h3></h3>
-					<h4>M3DA library provided in C and Lua</h4>
-				</section>
-				<section>
-					<h2>Data flow</h2>
-					<h3>Three main steps:</h3>
-					<div>
-						<ol>
-							<li class="fragment">Data is generated/acquired in asset application</li>
-							<li class="fragment">Data is pushed to Mihini agent using Racon lib</li>
-							<li class="fragment">Data is pushed to M2M Server using M3DA protocol</li>
-						</ol>
-					</div>
-				</section>
-				<section>
-					<h3>Lua Library initialization</h3>
-					<pre><code class="lua">
+					</section>
+					<section>
+						<h2>Application layer</h2>
+						<h3>
+							Composite structures are materialized with
+							<br>nodes and leaves in the data tree.</h3>
+					</section>
+					<section>
+						<h2>Application layer - Example</h2>
+						<h3>A GPS position</h3>
+						<div class="tree">
+							<ul>
+								<li>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gps
+									<ul>
+										<li>lat</li>
+										<li>lon</li>
+										<li>alt</li>
+									</ul>
+								</ul>
+							</div>
+						</section>
+						<section>
+							<h2>M3DA Message</h2>
+							<h3>= a map</h3>
+							<ul>
+								<li>key = path in the tree</li>
+								<li>values = value(s) for that leaf</li>
+							</ul>
+						</section>
+						<section>
+							<h2>M3DA Message - Example</h2>
+							<embed src="svg/m3da-message.svg" type="image/svg+xml" />
+						</section>
+						<section>
+							<h2>Commands, Events, Acks</h2>
+							<h3>= Conventions on the tree</h3>
+							<div>e.g. a 'commands' sub-branch</div>
+						</section>
+						<section>
+							<h2>Command - Example</h2>
+							<embed src="svg/m3da-command.svg" type="image/svg+xml" />
+						</section>
+						<section>
+							<h2>M3DA Response</h2>
+							<h3>= a status code + optional payload</h3>
+						</section>
+						<section>
+							<h2>Response - Example</h2>
+							<embed src="svg/m3da-response.svg" type="image/svg+xml" />
+						</section>
+						<section>
+							<h2>Payload serialization</h2>
+							<h3>Bysant</h3>
+						</section>
+						<!-- TODO -->
+						<section>
+							<h2>Security</h2>
+							<h3>Confidentiality, low overhead</h3>
+						</section>
+						<section>
+							<h2>Security</h2>
+							<h3>Protection against replay attacks</h3>
+							<div>(randomly generated nonce for each single message)</div>
+						</section>
+						<section>
+							<h2>Security</h2>
+							<h3>128 or 256 bits AES encryption</h3>
+						</section>
+						<section>
+							<h2>Security</h2>
+							<h3>Very low overhead</h3>
+							<div>
+								<ul>
+									<li> <strong>SSL/TLS</strong>
+										= 12 packets before being able
+										<br>to start a secure communication</li>
+									<li> <strong>M3DA</strong>
+										=
+										<u>none</u>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</section>
+					<section>
+						<section>
+							<h2>
+								Mihini API for
+								<br>over-the-air communications</h2>
+							<h3></h3>
+							<h3></h3>
+							<h4>M3DA library provided in C and Lua</h4>
+						</section>
+						<section>
+							<h2>Data flow</h2>
+							<h3>Three main steps:</h3>
+							<div>
+								<ol>
+									<li class="fragment-disabled">Data is generated/acquired in asset application</li>
+									<li class="fragment-disabled">Data is pushed to Mihini agent using Racon lib</li>
+									<li class="fragment-disabled">Data is pushed to M2M Server using M3DA protocol</li>
+								</ol>
+							</div>
+						</section>
+						<section>
+							<h3>Lua Library initialization</h3>
+							<pre><code class="lua">
 -- load the module
 local racon = require("racon")
 -- create an `asset`:
@@ -841,10 +839,10 @@ local racon = require("racon")
 -- identified by unique id
 local house = racon.newasset("house")
 						</code></pre>
-				</section>
-				<section>
-					<h3>Pushing data</h3>
-					<pre><code class="lua">
+						</section>
+						<section>
+							<h3>Pushing data</h3>
+							<pre><code class="lua">
 -- push data to Mihini agent:
 -- timestamped temperature of the bedroom
 house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "now")
@@ -860,45 +858,45 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 -- you may want to force data flushing from agent to server
 -- racon.triggerpolicy("hourly")
                                                 </code></pre>
-				</section>
-				<section>
-					<h3>Going Further</h3>
-					<div>
-						<ul>
-							<li>Data reception</li>
-							<li>
-								Advanced data sending:
+						</section>
+						<section>
+							<h3>Going Further</h3>
+							<div>
 								<ul>
-									<li>structured and optimized data</li>
-									<li>data consolidation</li>
-									<li>...</li>
+									<li>Data reception</li>
+									<li>
+										Advanced data sending:
+										<ul>
+											<li>structured and optimized data</li>
+											<li>data consolidation</li>
+											<li>...</li>
+										</ul>
+									</li>
 								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section>
-					<!-- TODO -->
-				</section>
-			</section>
-			<section>
-				<section data-state="hands-on">
-					<h2>
-						<u>STEP #3</u>
-					</h2>
-					<h3>
-						Send sensor data &amp; control actuators
-						<br>using M3DA</h3>
-				</section>
-				<section data-state="hands-on">
-					<h2>Make sure you start the Mihini agent</h2>
-					<img src="images/lab-screenshots/start-mihini.png" />
-				</section>
-				<section data-state="hands-on">
-					<h2>
-						Using the Mihini shell to change your Raspberry Pi communication ID
-					</h2>
-					<pre><code lang="bash">
+							</div>
+						</section>
+						<section>
+							<!-- TODO -->
+						</section>
+					</section>
+					<section>
+						<section data-state="hands-on">
+							<h2>
+								<u>STEP #3</u>
+							</h2>
+							<h3>
+								Send sensor data &amp; control actuators
+								<br>using M3DA</h3>
+						</section>
+						<section data-state="hands-on">
+							<h2>Make sure you start the Mihini agent</h2>
+							<img src="images/lab-screenshots/start-mihini.png" />
+						</section>
+						<section data-state="hands-on">
+							<h2>
+								Using the Mihini shell to change your Raspberry Pi communication ID
+							</h2>
+							<pre><code lang="bash">
 kartben@my-macbook:~$ telnet 192.168.0.100 2000
 Trying 192.168.0.100...
 Connected to 192.168.0.100.
@@ -907,10 +905,10 @@ Lua interactive shell
 > agent.config.agent.deviceId = "your-id-of-choice"
 > 
 </code></pre>
-				</section>
-				<section data-state="hands-on">
-					<h2>Check server settings</h2>
-					<pre><code lang="bash">
+						</section>
+						<section data-state="hands-on">
+							<h2>Check server settings</h2>
+							<pre><code lang="bash">
 > :agent.config.server
 = {
    url = "tcp://m2m.eclipse.org:44900",
@@ -919,27 +917,27 @@ Lua interactive shell
    retrytimes = 10 }
 > 
 </code></pre>
-				</section>
-				<section>
-					<h2>
-						Modify the Mihini app
-						<br>to use the push data API</h2>
-				</section>
-				<section>
-					<h2>What you need to do</h2>
-					<!-- TODO :) -->
-				</section>
-			</section>
-			<section>
-				<section>
-					<h1>Thanks!</h1>
-				</section>
-			</section>
-		</div>
-	</div>
-	<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
-	<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
+						</section>
+						<section>
+							<h2>
+								Modify the Mihini app
+								<br>to use the push data API</h2>
+						</section>
+						<section>
+							<h2>What you need to do</h2>
+							<!-- TODO :) -->
+						</section>
+					</section>
+					<section>
+						<section>
+							<h1>Thanks!</h1>
+						</section>
+					</section>
+				</div>
+			</div>
+			<script src="reveal/lib/js/head.min.js" type="text/javascript"></script>
+			<script src="reveal/js/reveal.min.js" type="text/javascript"></script>
+			<script type="text/javascript">
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -980,4 +978,4 @@ Lua interactive shell
 
 		</script>
 </body>
-</html>
+		</html>
