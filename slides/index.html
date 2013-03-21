@@ -292,16 +292,16 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Hello World</h2>
-					<pre><code lang="lua">print('Hello World')</code></pre>
+					<pre><code class="lua">print('Hello World')</code></pre>
 					<h4 class="fragment">Easy, eh?</h4>
 				</section>
 				<section>
 					<h2>Functions</h2>
-					<pre><code lang="lua">function foo(n) return n*2 end</code></pre>
+					<pre><code class="lua">function foo(n) return n*2 end</code></pre>
 				</section>
 				<section>
 					<h2>Functions are values</h2>
-					<pre><code lang="lua">foo = function(n) return n*2 end</code></pre>
+					<pre><code class="lua">foo = function(n) return n*2 end</code></pre>
 				</section>
 				<section>
 					<h2>Tables, tables, tables!</h2>
@@ -318,19 +318,19 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h3>Creating a table</h3>
-					<pre><code lang="lua">x = {}</code></pre>
+					<pre><code class="lua">x = {}</code></pre>
 				</section>
 				<section>
 					<h3>Creating a table: list</h3>
-					<pre><code lang="lua">x = { 42, "hello" }</code></pre>
+					<pre><code class="lua">x = { 42, "hello" }</code></pre>
 				</section>
 				<section>
 					<h3>Creating a table: array</h3>
-					<pre><code lang="lua">x = { [1] = 123, [2] = "hello" }</code></pre>
+					<pre><code class="lua">x = { [1] = 123, [2] = "hello" }</code></pre>
 				</section>
 				<section>
 					<h3>Creating a table: associative array</h3>
-					<pre><code lang="lua">x = { value = 123, text = "hello" }</code></pre>
+					<pre><code class="lua">x = { value = 123, text = "hello" }</code></pre>
 				</section>
 				<!-- other Lua features??? -->
 			</section>
@@ -341,6 +341,77 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h3>
 						Write simple code that will
 						<br>convert raw sensors values</h3>
+				</section>
+				<section>
+					<h2>Your first Lua script</h2>
+					<h3> steps:</h3>
+					<ol>
+						<li> Your hello world :)</li>
+						<li> Create a new function and call it</li>
+						<li> Improve the function to do the conversion</li>
+					</ol>
+
+				</section>
+
+				<section>
+					<h2>Step #1.1</h2>
+					Create a new file a write in it:
+					<pre><code class="lua">print("my hello world")</code></pre>
+				</section>
+
+				<section>
+					<h2>Step #1.1</h2>
+					Run it!
+					<!-- Insert Koneki screenshot? -->
+				</section>
+				<section>
+					<h2>Step #1.2</h2>
+					Create a function:
+					<ul>
+						<li>takes one argument</li>
+						<li>returns one value
+						   <br>(you can leave value convertion for next sub-step)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Step #1.2</h2>
+					It should looks like this:
+<pre><code class="lua">-- make the fct `local` not to mess with global env.
+local function convert (value)
+    return(value) --no conversion for now
+end
+</code></pre>
+				</section>
+				<section>
+					<h2>Step #1.2</h2>
+					Now create a list of integer values ( in 0 to 1023) and call the function with each value
+					<br><small>This a simple list iteration, don't forget to use Koneki auto-complete!!</small>
+				</section>
+				<section>
+					<h2>Step #1.2</h2>
+                                        It should looks like this:
+<pre><code class="lua">-- make the fct `local` not to mess with global env.
+local function convert (value)
+    return(value) --no conversion for now
+end
+
+-- list of values to convert
+local values = { 42, 23, 199}
+
+for key, raw_value in ipairs(values) do
+    local temp = convert(raw_value)
+    print(string.format("Raw value: %d means %d °C", raw_value, temp))
+end
+</code></pre>
+			</section>
+				<section>
+                                        <h2>Step #1.2</h2>
+                                        Now do the conversion:
+					<!--<embed src="svg/data_conversion.svg" type="image/svg+xml" />-->
+					<ul>
+						<li>Temperature sensor: 10mV is </li>
+						<li>Arduino ADC: [0V ; 5V] becomes [0 ; 1023]</li>
+					</ul>
 				</section>
 			</section>
 			<section>
@@ -363,7 +434,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Serial port API</h2>
-					<pre><code lang="lua">
+					<pre><code class="lua">
 -- open the serial port
 local serial = require("serial")
 local portconfig = { parity="none", flowControl="none",
@@ -425,7 +496,7 @@ sdev:write("somedata") -- writes buffer to serial port
 				<section>
 					<h2>Modbus Lua API</h2>
 					<h3>Initializing the client protocol stack</h3>
-					<pre><code lang="lua">
+					<pre><code class="lua">
 -- load the module
 local modbus = require("modbus")
 
@@ -442,13 +513,13 @@ local mdev = modbus.new("/dev/ttyS0", portcfg, "ASCII")
 				<section>
 					<h2>Modbus Lua API</h2>
 					<h3>Sending / Reading data</h3>
-					<pre><code lang="lua">
+					<pre><code class="lua">
 -- reads 2 registers (16 bits word) on slave id 10 at address 42.
 local input_buffer = mdev:readHoldingRegisters(10, 42, 2)
 
 -- decode input buffer: e.g. 2 signed short int
 -- (decoding depends on data mapping on requested modbus device)
-local shortint1, shortint2 = string.unpack(input_buffer, "h2")
+local _, shortint1, shortint2 = string.unpack(input_buffer, "h2")
 
 -- writes to device id 1, address 90, 3 unsigned short values
 mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
@@ -693,7 +764,7 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 				</section>
 				<section>
 					<h3>Lua Library initialization</h3>
-					<pre><code lang="lua">
+					<pre><code class="lua">
 -- load the module
 local racon = require("racon")
 -- create an `asset`:
@@ -704,7 +775,7 @@ local house = racon.newasset("house")
 				</section>
 				<section>
 					<h3>Pushing data</h3>
-					<pre><code lang="lua">
+					<pre><code class="lua">
 -- push data to Mihini agent:
 -- timestamped temperature of the bedroom
 house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "now")
