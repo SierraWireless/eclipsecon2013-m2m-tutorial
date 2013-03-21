@@ -155,39 +155,39 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Code completion</h2>
-					<img src="images/ldt-screenshots/screenCodeCompletion.png" />
+					<img src="images/ldt-screenshots/screenCodeCompletion.png" alt="Code completion" />
 				</section>
 				<section>
 					<h2>Templates</h2>
-					<img src="images/ldt-screenshots/screenTemplate.png" />
+					<img src="images/ldt-screenshots/screenTemplate.png" alt="Templates" />
 				</section>
 				<section>
 					<h2>Debugger</h2>
-					<img src="images/ldt-screenshots/screenDebugger.png" />
+					<img src="images/ldt-screenshots/screenDebugger.png" alt="Debugger" />
 				</section>
 				<section>
 					<h2>Syntax coloring</h2>
-					<img src="images/ldt-screenshots/screenVariableHighlight.png" />
+					<img src="images/ldt-screenshots/screenVariableHighlight.png" alt="Syntax coloring" />
 				</section>
 				<section>
 					<h2>Error markers</h2>
-					<img src="images/ldt-screenshots/screenErrorMarker.png" />
+					<img src="images/ldt-screenshots/screenErrorMarker.png" alt="Error markers" />
 				</section>
 				<section>
 					<h2>Outline</h2>
-					<img src="images/ldt-screenshots/screenOutline.png" />
+					<img src="images/ldt-screenshots/screenOutline.png" alt="Outline" />
 				</section>
 				<section>
 					<h2>Formatter</h2>
-					<img src="images/ldt-screenshots/screenFormatter.png" />
+					<img src="images/ldt-screenshots/screenFormatter.png" alt="Formatter" />
 				</section>
 				<section>
 					<h2>Navigation</h2>
-					<img src="images/ldt-screenshots/screenCodeNavigation.png" />
+					<img src="images/ldt-screenshots/screenCodeNavigation.png" alt="Code navigation" />
 				</section>
 				<section>
 					<h2>Cross-platform</h2>
-					<img src="images/ldt-screenshots/screenCrossPlatform.png" />
+					<img src="images/ldt-screenshots/screenCrossPlatform.png" alt="Cross platform" />
 				</section>
 				<section>
 					<h2>Lua Development Tools for Mihini</h2>
@@ -243,24 +243,24 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section data-state="hands-on">
 					<h2>Create a new RSE connection</h2>
-					<img src="images/lab-screenshots/new-remote-connection.png" />
+					<img src="images/lab-screenshots/new-remote-connection.png" alt="New remote connection" />
 				</section>
 				<section data-state="hands-on">
 					<h2>“Lua SSH” system</h2>
-					<img src="images/lab-screenshots/new-lua-ssh.png" />
+					<img src="images/lab-screenshots/new-lua-ssh.png" alt="New Lua SSH" />
 				</section>
 				<section data-state="hands-on">
 					<h2>Connection details</h2>
-					<img src="images/lab-screenshots/new-connection-details.png" />
+					<img src="images/lab-screenshots/new-connection-details.png" alt="New connection details" />
 					<h3 style="color:#c61717">Use the IP address you've been assigned ☺</h3>
 				</section>
 				<section data-state="hands-on">
 					<h2>Remote file system</h2>
-					<img src="images/lab-screenshots/new-sftp.png" />
+					<img src="images/lab-screenshots/new-sftp.png" alt="New SFTP" />
 				</section>
 				<section data-state="hands-on">
 					<h2>First connection</h2>
-					<img src="images/lab-screenshots/new-ssh-terminal.png" />
+					<img src="images/lab-screenshots/new-ssh-terminal.png" alt="New SSH terminal" />
 					<div>
 						<ul>
 							<li>
@@ -274,7 +274,10 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						</ul>
 					</div>
 				</section>
-
+				<section data-state="hands-on">
+					<h2>SSH terminal</h2>
+					<img src="images/lab-screenshots/terminal-view.png" alt="Terminal view" />
+				</section>
 			</section>
 			<section>
 				<section>
@@ -823,11 +826,42 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 				</section>
 				<section data-state="hands-on">
 					<h2>Make sure you start the Mihini agent</h2>
+					<img src="images/lab-screenshots/start-mihini.png" />
 				</section>
 				<section data-state="hands-on">
 					<h2>
-						Using the Mihini shell to change your RaspPi communication ID
+						Using the Mihini shell to change your Raspberry Pi communication ID
 					</h2>
+					<pre><code lang="bash">
+kartben@my-macbook:~$ telnet 192.168.0.100 2000
+Trying 192.168.0.100...
+Connected to 192.168.0.100.
+Escape character is '^]'.
+Lua interactive shell
+> agent.config.agent.deviceId = "your-id-of-choice"
+> 
+</code></pre>
+				</section>
+				<section data-state="hands-on">
+					<h2>Check server settings</h2>
+					<pre><code lang="bash">
+> :agent.config.server
+= {
+   url = "tcp://m2m.eclipse.org:44900",
+   serverId = "M2M_ECLIPSE",
+   retryperiod = 60,
+   retrytimes = 10 }
+> 
+</code></pre>
+				</section>
+				<section>
+					<h2>
+						Modify the Mihini app
+						<br>to use the push data API</h2>
+				</section>
+				<section>
+					<h2>What you need to do</h2>
+					<!-- TODO :) -->
 				</section>
 			</section>
 			<section>
