@@ -42,20 +42,25 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section data-state="bg wifi">
 					<h2>Before we get started&hellip;</h2>
-					<h3>WIFI: MIHINI-TUTORIAL</h3>
-					<h3>Slides: http://192.168.0.10:1948</h3>
+					<div>
+						Wi-Fi:
+						<code>MIHINI-TUTORIAL</code>
+					</div>
+					<div>
+						Live slide deck:
+						<a href="http://192.168.0.10:1948">http://192.168.0.10:1948</a>
+					</div>
 				</section>
-
 				<section data-state="bg learning">
 					<h2>What you will learn today</h2>
 					<div>
 						<ul>
-							<li class="fragment">What is Mihini</li>
-							<li class="fragment">What are the tools to develop Mihini apps</li>
-							<li class="fragment">Basic Lua programming</li>
-							<li class="fragment">How to connect an embedded device to sensors</li>
-							<li class="fragment">How to push data to a server</li>
-							<li class="fragment"> <i>(How to create a fancy end-user app)</i>
+							<li class="fragment-disabled">What is Mihini</li>
+							<li class="fragment-disabled">What are the tools to develop Mihini apps</li>
+							<li class="fragment-disabled">Basic Lua programming</li>
+							<li class="fragment-disabled">How to connect an embedded device to sensors</li>
+							<li class="fragment-disabled">How to push data to a server</li>
+							<li class="fragment-disabled"> <i>(How to create a fancy end-user app)</i>
 							</li>
 						</ul>
 					</div>
@@ -77,75 +82,15 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 			</section>
 			<section>
 				<section>
-					<h2>Mihini</h2>
-					<h3 class="fragment">Embedded M2M application framework</h3>
-				</section>
-				<section>
-					<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
-						<h2>Application Framework</h2>
-						<h2>+</h2>
-						<h2>Agent</h2>
-					</div>
-				</section>
-				<section>
-					<h2>Mihini Application Framework</h2>
-					<div>
-						<h3>
-							<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
-						</h3>
-						<div>
-							<ul>
-								<li>Serial and I/O management,</li>
-								<li>Networking (FTP, HTTP, e-mail, …),</li>
-								<li>GPS,</li>
-								<li>Cryptography,</li>
-								<li>Modbus,</li>
-								<li>Local storage</li>
-								<li>etc.</li>
-							</ul>
-						</div>
-					</div>
-					<div>
-						<br></div>
-				</section>
-				<section>
-					<h2>Mihini Agent</h2>
-					<div>
-						<ul>
-							<li>
-								Data queues
-								<br></li>
-							<li>
-								Network bearers
-								<br></li>
-							<li>
-								Device management
-								<br></li>
-							<li>
-								Application container
-								<br></li>
-							<li>
-								Application configuration
-								<br></li>
-						</ul>
-					</div>
-				</section>
-				<section>
-					<h2>Mihini architecture</h2>
-					<embed src="images/Mihini_Architecture.png" type="image/png" />
-				</section>
-			</section>
-			<section>
-				<section>
 					<h2>Koneki</h2>
-					<h3 class="fragment">Tools for M2M developers</h3>
+					<h3 class="fragment-disabled">Tools for M2M developers</h3>
 				</section>
 				<section>
 					<h2>Help developers&hellip;</h2>
-					<h3 class="fragment">write code</h3>
-					<h3 class="fragment">simulate</h3>
-					<h3 class="fragment">debug</h3>
-					<h3 class="fragment">deploy</h3>
+					<h3 class="fragment-disabled">write code</h3>
+					<h3 class="fragment-disabled">simulate</h3>
+					<h3 class="fragment-disabled">debug</h3>
+					<h3 class="fragment-disabled">deploy</h3>
 				</section>
 				<section>
 					<h2>OMA-DM Simulator</h2>
@@ -200,12 +145,12 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				</section>
 				<section>
 					<h2>Target Management</h2>
-					<h3>LDT leverages Eclipse RSE to interact with Mihini:</h3>
+					<h3>LDT leverages Eclipse RSE to interact with Mihini</h3>
 					<div>
 						<ul>
-							<li class="fragment">shell</li>
-							<li class="fragment">script deployment</li>
-							<li class="fragment">remote debug</li>
+							<li class="fragment-disabled">shell</li>
+							<li class="fragment-disabled">script deployment</li>
+							<li class="fragment-disabled">remote debug</li>
 						</ul>
 					</div>
 				</section>
@@ -286,17 +231,17 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				<section data-state="bg moon">
 					<h2>What is Lua?</h2>
 					<ul>
-						<li class="fragment">High-level programming language</li>
-						<li class="fragment">Scripting</li>
-						<li class="fragment">Simple</li>
-						<li class="fragment">Extensible</li>
-						<li class="fragment">Portable</li>
+						<li class="fragment-disabled">High-level programming language</li>
+						<li class="fragment-disabled">Scripting</li>
+						<li class="fragment-disabled">Simple</li>
+						<li class="fragment-disabled">Extensible</li>
+						<li class="fragment-disabled">Portable</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Hello World</h2>
 					<pre><code class="lua">print('Hello World')</code></pre>
-					<h4 class="fragment">Easy, eh?</h4>
+					<h4 class="fragment-disabled">Easy, eh?</h4>
 				</section>
 				<section>
 					<h2>Functions</h2>
@@ -313,11 +258,11 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>
 						Tables are used for
 						<br>storing collections</h2>
-					<h3 class="fragment">lists, sets, arrays, associative arrays</h3>
+					<h3 class="fragment-disabled">lists, sets, arrays, associative arrays</h3>
 				</section>
 				<section>
 					<h2>&hellip; that contain other objects</h2>
-					<h3 class="fragment">numbers, strings, or even other aggregates</h3>
+					<h3 class="fragment-disabled">numbers, strings, or even other aggregates</h3>
 				</section>
 				<section>
 					<h3>Creating a table</h3>
@@ -419,7 +364,7 @@ end
 					<!--<embed src="svg/data_conversion.svg" type="image/svg+xml" />
 					-->
 					Lua⟷Modbus⟷Arduino ADC⟷Temp sensor
-					<div class="fragment">
+					<div class="fragment-disabled">
 						<br>
 						<br>
 						2 conversions apply
@@ -482,7 +427,66 @@ end
 							The code becomes:
 						</section>
 					</section>
-					<section>
+			<section>
+				<section>
+					<h2>Mihini</h2>
+					<h3 class="fragment-disabled">Embedded M2M application framework</h3>
+				</section>
+				<section>
+					<div style="background-color: rgba(255,255,255, 0.5); border-radius: 15px; border: 10px black solid; padding-top:1em;">
+						<h2>Application Framework</h2>
+						<h2>+</h2>
+						<h2>Agent</h2>
+					</div>
+				</section>
+				<section>
+					<h2>Mihini Application Framework</h2>
+					<div>
+						<h3>
+							<span style="letter-spacing: -0.02em;">Building blocks to develop M2M apps</span>
+						</h3>
+						<div>
+							<ul>
+								<li>Serial and I/O management</li>
+								<li>Networking (FTP, HTTP, e-mail, …)</li>
+								<li>Scheduler</li>
+								<li>Industrial protocols (Modbus, …)</li>
+								<li>Local storage</li>
+								<li>etc.</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<br></div>
+				</section>
+				<section>
+					<h2>Mihini Agent</h2>
+					<div>
+						<ul>
+							<li>
+								Data queues
+								<br></li>
+							<li>
+								Network bearers
+								<br></li>
+							<li>
+								Device management
+								<br></li>
+							<li>
+								Application container
+								<br></li>
+							<li>
+								Application configuration
+								<br></li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>Mihini architecture</h2>
+					<embed src="images/Mihini_Architecture.png" type="image/png" />
+				</section>
+			</section>
+			<section>
 						<section data-state="bg sensors">
 							<h2>Local Communication</h2>
 						</section>
@@ -519,15 +523,15 @@ sdev:write("somedata") -- writes buffer to serial port
 						<section>
 							<h2>Modbus</h2>
 							<ul>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									Industrial communication protocol
 									<br>
 									<small>De facto standard created by Modicon/Schneider Electric</small>
 								</li>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									Application layer protocol
 									<br>stateless client-server protocol</li>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									Transactions
 									<ul>
 										<li>request by a client (= master)</li>
@@ -539,19 +543,19 @@ sdev:write("somedata") -- writes buffer to serial port
 						<section>
 							<h2>Modbus</h2>
 							<ul>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									Serial or TCP
 									<br>
 									<small>Many devices can be connected in the same network</small>
 								</li>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									2 transmission mode: 'RTU', 'ASCII'
 									<br>
 									<small>
 										Each mode comes with specific encoding, framing and error checksum mecanism
 									</small>
 								</li>
-								<li class="fragment">
+								<li class="fragment-disabled">
 									Manipulates raw data (bits or words)
 									<br>
 									<small>
@@ -679,23 +683,23 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 						</section>
 						<section>
 							<h1>M3DA</h1>
-							<h2 class="fragment">Micro M2M Data Access</h2>
+							<h2 class="fragment-disabled">Micro M2M Data Access</h2>
 						</section>
 						<section data-state="bg compact">
 							<h2>Compact</h2>
-							<h3 class="fragment">… because in the wireless world, data overhead costs money</h3>
+							<h3 class="fragment-disabled">… because in the wireless world, data overhead costs money</h3>
 						</section>
 						<section data-state="bg interoperable">
 							<h2>Interoperable</h2>
-							<h3 class="fragment">… because the M2M communication chain is heterogeneous</h3>
+							<h3 class="fragment-disabled">… because the M2M communication chain is heterogeneous</h3>
 						</section>
 						<section data-state="bg secure">
 							<h2>Secure</h2>
-							<h3 class="fragment">… because security is #1 concern for M2M adopters</h3>
+							<h3 class="fragment-disabled">… because security is #1 concern for M2M adopters</h3>
 						</section>
 						<section data-state="bg open">
 							<h2>Open</h2>
-							<h3 class="fragment">… because vendor lock-in hinders M2M adoption</h3>
+							<h3 class="fragment-disabled">… because vendor lock-in hinders M2M adoption</h3>
 						</section>
 						<!--
 				<section>
@@ -824,9 +828,9 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 							<h3>Three main steps:</h3>
 							<div>
 								<ol>
-									<li class="fragment">Data is generated/acquired in asset application</li>
-									<li class="fragment">Data is pushed to Mihini agent using Racon lib</li>
-									<li class="fragment">Data is pushed to M2M Server using M3DA protocol</li>
+									<li class="fragment-disabled">Data is generated/acquired in asset application</li>
+									<li class="fragment-disabled">Data is pushed to Mihini agent using Racon lib</li>
+									<li class="fragment-disabled">Data is pushed to M2M Server using M3DA protocol</li>
 								</ol>
 							</div>
 						</section>
