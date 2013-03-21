@@ -596,16 +596,26 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 								<li>Registers #00➔#05 = A0➔A5</li>
 								<li>Registers #06➔#11 = D2➔D7 (output)</li>
 								<li>Registers #12➔#16 = D8➔D12 (input)</li>
-								<li>Register #17 = Servo output (D13)</li>
-								<li>Register #18 = # of errors (input)</li>
 								<li>Modbus baud rate: 9600</li>
 							</ul>
 						</section>
 						<section data-state="bg arduino hands-on">
 							<h2>Your breadboard</h2>
-							<h3>An LED (digital output)</h3>
-							<h3>A photoresistor (analog input)</h3>
-							<h3>A temperature sensor (analog input)</h3>
+							<h3>
+								A photoresistor on
+								<u>A0</u>
+								(analog input)
+							</h3>
+							<h3>
+								A temperature sensor on
+								<u>A1</u>
+								(analog input)
+							</h3>
+							<h3>
+								An LED on
+								<u>D7</u>
+								(digital output)
+							</h3>
 						</section>
 						<section data-state="bg arduino hands-on">
 							<h2>Schematics</h2>
