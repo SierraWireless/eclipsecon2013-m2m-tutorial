@@ -315,7 +315,7 @@ x = { value = 123, text = "hello" }
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
 					It should look like this:
-					<pre><code class="lua">-- make the fonction `local` not to mess with global env.
+					<pre><code class="lua">-- make the function `local` not to mess with global env.
 local function convert (raw_value)
     return(raw_value) --no conversion for now
 end
@@ -332,7 +332,7 @@ end
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
 					It should look like this:
-					<pre><code class="lua">-- make the fonction `local` not to mess with global env.
+					<pre><code class="lua">-- make the function `local` not to mess with global env.
 local function convert (raw_value)
     return(raw_value) --no conversion for now
 end
@@ -552,7 +552,7 @@ sdev:write("somedata") -- writes buffer to serial port
 									2 transmission mode: 'RTU', 'ASCII'
 									<br>
 									<small>
-										Each mode comes with specific encoding, framing and error checksum mecanism
+										Each mode comes with specific encoding, framing and error checksum mechanism
 									</small>
 								</li>
 								<li class="fragment-disabled">
@@ -795,6 +795,21 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 						<section>
 							<h2>Payload serialization</h2>
 							<h3>Bysant</h3>
+							Designed to feet M3DA protocol needs:
+							<ul>
+								<li>Binary byte-aligned serializer</li>
+								<li>Self descriptive serialized stream</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Payload serialization</h2>
+							<h3>Bysant</h3>
+							<ul>
+								<li>Supported data types:
+								<br>null, boolean, integers, floating point numbers,
+								<br>string, list, map, custom objects</li>
+								<li>Bytecode planes: serialization by context is optimized</li>
+							</ul>
 						</section>
 						<!-- TODO -->
 						<section>
@@ -892,9 +907,10 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 								</ul>
 							</div>
 						</section>
-						<section>
-							<!-- TODO -->
-						</section>
+							<!-- TODO 
+							<section>
+							</section>
+							-->
 					</section>
 					<section>
 						<section data-state="hands-on">
@@ -936,12 +952,25 @@ Lua interactive shell
 </code></pre>
 						</section>
 						<section>
+							<h3>Reboot Mihini agent to use to new parameters</h3>
+							<ul>
+									<li>Ctrl-C in Console you used to start it</li>
+									<li>run start.sh again!</li>
+							</ul>
+						</section>
+						<section>
 							<h2>
 								Modify the Mihini app
 								<br>to use the push data API</h2>
 						</section>
 						<section>
 							<h2>What you need to do</h2>
+							<ul>
+									<li>Load and init Racon module</li>
+									<li>Create and start a new Asset
+									<br>You can pick up the assetid you want</li>
+									<li>Call pushdata API to send converted values</li>
+							<ul>
 							<!-- TODO :) -->
 						</section>
 					</section>
@@ -978,7 +1007,7 @@ Lua interactive shell
 							</div>
 						</section>
 						<section>
-							<h2>Lua ressources</h2>
+							<h2>Lua resources</h2>
 							<ul>
 								<li><a href="http://www.lua.org/">http://www.lua.org/</a></li>
 								<li><a href="http://www.lua.org/manual/5.1/">http://www.lua.org/manual/5.1/</a></li>
