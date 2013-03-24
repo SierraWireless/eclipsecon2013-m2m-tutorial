@@ -951,8 +951,7 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 					</section>
 					<section>
 						<section data-state="hands-on">
-							<h2>
-								<u>STEP #3</u>
+							<h2> <u>STEP #3</u>
 							</h2>
 							<h3>
 								Send sensor data &amp; control actuators
@@ -960,16 +959,17 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 						</section>
 						<section data-state="hands-on">
 							<h2>Make sure you start the Mihini agent</h2>
-							<img src="images/lab-screenshots/start-mihini.png" />
+							<img src="images/lab-screenshots/start-mihini.png" />					
 						</section>
 						<section data-state="hands-on">
 							<h2>
-								Using the Mihini shell to change your Raspberry Pi communication ID
+								Use the Mihini shell to change your Raspberry Pi communication ID
 							</h2>
+							<div>In a new Terminal view&hellip;</div>
 							<pre><code class="bash">
-kartben@my-macbook:~$ telnet 192.168.0.100 2000
-Trying 192.168.0.100...
-Connected to 192.168.0.100.
+kartben@my-macbook:~$ telnet localhost 2000
+Trying localhost...
+Connected to localhost.
 Escape character is '^]'.
 Lua interactive shell
 > agent.config.agent.deviceId = "your-id-of-choice"
@@ -989,10 +989,14 @@ Lua interactive shell
 </code></pre>
 						</section>
 						<section>
-							<h3>Reboot Mihini agent to use to new parameters</h3>
+							<h3>Reboot Mihini agent to use new parameters</h3>
 							<ul>
-									<li>Ctrl-C in Console you used to start it</li>
-									<li>run start.sh again!</li>
+								<li>Ctrl-C in Console you used to start it</li>
+								<li>
+									Execute
+									<code>start.sh</code>
+									again!
+								</li>
 							</ul>
 						</section>
 						<section>
@@ -1003,15 +1007,57 @@ Lua interactive shell
 						<section>
 							<h2>What you need to do</h2>
 							<ul>
-									<li>Load and init Racon module</li>
-									<li>Create and start a new Asset
-									<br>You can pick up the assetid you want</li>
-									<li>Call pushdata API to send converted values</li>
-							<ul>
-							<!-- TODO :) -->
+								<li>Load and init Racon module</li>
+								<li>
+									Create and start a new Asset
+									<br>					
+									assetId:
+									<code>greenhouse</code>
+									, or whatever you want
+								</li>
+								<li>
+									Call
+									<code>pushdata</code>
+									API to send converted values
+								</li>
+								<ul></section>
+								<section data-state="bg arduino hands-on">
+									<code><strong>GET</strong> http://192.168.0.10:8080/data/{deviceId}</code>
+									<pre><code class="json">{
+   "greenhouse.temperature": [{
+     "value": [25.878906],
+     "timestamp": "1363863252440418"
+   }, {
+     "value": [25.878906],
+     "timestamp": "1363863251338497"
+   }],
+   "greenhouse.luminosity": [{
+     "value": [117.32026143791],
+     "timestamp": "1363863252440418"
+   }, {
+     "value": [117.86885245902],
+     "timestamp": "1363863251338497"
+   }],
+   "greenhouse.timestamp": [{
+     "value": [1363836832000],
+     "timestamp": "1363863252440418"
+   }, {
+     "value": [1363836831000],
+     "timestamp": "1363863251338497"
+   }]
+ }</code>
+                        </pre>
+							</section>
+							<section data-state="bg arduino hands-on">
+								<code><strong>POST</strong> http://192.168.0.10:8080/data/{deviceId}</code>
+								<pre><code class="json">{
+    "settings" : [{
+       "key" : "greenhouse.commands.toggleswitch"
+    }]
+ } </code></pre>
+							</section>
 						</section>
-					</section>
-					<section>
+						<section>
 						<section>
 							<h2>Going further&hellip;</h2>
 						</section>
@@ -1029,14 +1075,12 @@ Lua interactive shell
 						</section>
 						<section>
 							<h2>Manipulate the Application Container</h2>
-							Install your application in Mihini Application Container,
-							<br>and take advantage of:
+							Install your application in Mihini Application Container to:
 							<br>
 							<ul>
 								<li>Start automatically the application at boot</li>
-								<li>Auto-restart application in case of failure</li>
+								<li>Auto-restart the application in case of failure</li>
 								<li>Manage the application remotely</li>
-								<li>And more!</li>
 							</ul>
 							<br><br>
 							<div>
@@ -1058,8 +1102,11 @@ Lua interactive shell
 						<section>
 							<h2>Contact us</h2>
 							<ul>
-								<li><a href="http://www.eclipse.org/mihini/">http://www.eclipse.org/mihini/</a></li>
+								<li><a href="http://www.eclipse.org/mihini/">http://www.eclipse.org/mihini</a></li>
 								<li><a href="mailto:mihini-dev@eclipse.org">mihini-dev@eclipse.org</a></li>
+								<br>
+								<li><a href="http://www.eclipse.org/koneki/">http://www.eclipse.org/koneki</a></li>
+								<li><a href="http://www.eclipse.org/forums/eclipse.koneki">Koneki forum</a></li>
 							</ul>
 						</section>
 					</section>
