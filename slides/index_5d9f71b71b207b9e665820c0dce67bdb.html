@@ -686,6 +686,22 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 								</li>
 							</ul>
 						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Configure the remote Mihini VM</h2>
+							<div>
+								<img src="images/lab-screenshots/configure-remote-lua.png" alt="Remote VM configuration" />
+							</div>
+							<ul>
+								<li>
+									Lua Command:
+									<code>/home/pi/lua.sh</code>
+								</li>
+								<li>
+									Output Directory:
+									<code>/tmp</code>
+								</li>
+							</ul>
+						</section>
 					</section>
 					<section>
 						<section>
@@ -904,7 +920,7 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 -- for development purpose (or debug),
 -- you may want to force data flushing from agent to server
 -- racon.triggerpolicy("hourly")
-                                                </code></pre>
+</code></pre>
 						</section>
 						<section>
 							<h3>Going Further</h3>
