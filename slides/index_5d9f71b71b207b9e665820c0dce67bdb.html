@@ -262,7 +262,7 @@ x = { value = 123, text = "hello" }
 							<br>
 							<li>How to share code in Lua application:</li>
 							<ul>
-								<li>Module is a Lua convention to make a Lua file easily 
+								<li>Modules are a Lua convention to make a Lua file easily 
 									<br>loadable from another one.</li>
 								<li>Modules are loaded using <code>`require`</code> function</li>
 							</ul>
@@ -291,10 +291,25 @@ x = { value = 123, text = "hello" }
 
 				<section data-state="hands-on">
 					<h2>Step #1.1</h2>
-					Create a new file
+					<div>Create a new Lua project</div>
+					<img src="images/lab-screenshots/new-lua-project.png" />
+				</section>
+
+				<section data-state="hands-on">
+					<h2>Step #1.1</h2>
+					<img src="images/lab-screenshots/new-lua-project2.png" />
+				</section>
+
+				<section data-state="hands-on">
+					<h2>Step #1.1</h2>
+					In the 
 					<code>main.lua</code>
 					file:
-					<pre><code class="lua">print("my hello world")</code></pre>
+					<pre><code class="lua">local function main()
+  print("Hello world!")
+end
+main()
+</code></pre>
 				</section>
 
 				<section data-state="hands-on">
