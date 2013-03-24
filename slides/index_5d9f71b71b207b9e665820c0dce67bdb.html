@@ -40,6 +40,12 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 						<span style="font-size: 36.47672px;font-style: normal;font-variant: normal;line-height: 43.187405px;">EclipseCon 2013</span>
 					</h5>
 				</section>
+				<section data-state="">
+					<h2>Who we are</h2>
+					<h3>Laurent Barthélémy</h3>
+					<h3>Benjamin Cabé</h3>
+					<h3>Gaétan Morice</h3>
+				</section>
 				<section data-state="bg wifi">
 					<h2>Before we get started&hellip;</h2>
 					<div>
@@ -284,7 +290,7 @@ x = { value = 123, text = "hello" }
 						<li>Your hello world :)</li>
 						<li>Create a new function and call it</li>
 						<li>Improve the function to do the conversion</li>
-						<li>Clean and make the code a module</li>
+						<li>Clean and turn the code into a module</li>
 					</ol>
 
 				</section>
@@ -302,7 +308,7 @@ x = { value = 123, text = "hello" }
 
 				<section data-state="hands-on">
 					<h2>Step #1.1</h2>
-					In the 
+					Tweak the 
 					<code>main.lua</code>
 					file:
 					<pre><code class="lua">local function main()
@@ -734,7 +740,7 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 						</section>
 						<section data-state="bg interoperable">
 							<h2>Interoperable</h2>
-							<h3 class="fragment-disabled">… because the M2M communication chain is heterogeneous</h3>
+							<h3 class="fragment-disabled">… because the M2M communication chain<br> is heterogeneous</h3>
 						</section>
 						<section data-state="bg secure">
 							<h2>Secure</h2>
@@ -826,10 +832,10 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 						<section>
 							<h2>Payload serialization</h2>
 							<h3>Bysant</h3>
-							Designed to feet M3DA protocol needs:
+							Designed to fit M3DA protocol needs:
 							<ul>
-								<li>Binary byte-aligned serializer</li>
-								<li>Self descriptive serialized stream</li>
+								<li>Binary, byte-aligned, serializer</li>
+								<li>Self-descriptive serialized stream</li>
 							</ul>
 						</section>
 						<section>
