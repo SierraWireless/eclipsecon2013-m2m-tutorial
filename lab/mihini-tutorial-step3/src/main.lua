@@ -97,12 +97,12 @@ local function main()
     if (modbus_client) then
         log(LOG_NAME, "INFO", "Modbus   - OK")
     end
-
+    
     -- Server agent configuration
     assert(racon.init())
     log(LOG_NAME, "INFO", "Server agent - OK")
     
-    greenhouse_asset = racon.newasset(ASSET_ID)
+    local greenhouse_asset = racon.newAsset(ASSET_ID)
     greenhouse_asset.tree.commands.toggleswitch = process_toggleswitch
     greenhouse_asset :start()
 
