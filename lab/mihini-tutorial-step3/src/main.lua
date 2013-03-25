@@ -37,8 +37,6 @@ local led_register =  11
 local modbus_process = { luminosity  = utils.processLuminosity,
     temperature = utils.processTemperature}
 
-setmetatable(modbus_process,{__index = function (_, _) return utils.identity end})
-
 --- Init Modbus
 local function init_modbus()
     if modbus_client_pending_init then return; end
@@ -65,19 +63,17 @@ local function process_modbus ()
     local pushdata_buffer = {}
 
     for type, address in pairs(modbus_registers) do
-        val = modbus_process[type](values[address+1])
+        local val = modbus_process[type](values[address+1])
         log(LOG_NAME, "INFO", "Read from modbus %s : %s", type, tostring(val))
-        pushdata_buffer[data] = val
+        pushdata_buffer[type] = val
     end
     
-    buffer.timestamp=os.time() * 1000
-    log(LOG_NAME, 'INFO', "Sending to Server. Date= %s", tostring(buffer.timestamp))
-    racon_asset :pushdata ('', buffer, 'now')    -- enqueue data to server
+    pushdata_buffer.timestamp=os.time() * 1000
+    greenhouse_asset:pushData ('data', pushdata_buffer, 'now')    -- enqueue data to server
     racon.triggerPolicy('now')
-    
 end
 
-local led_state = 0
+local led_state = 1
 local function toggle_led()
     modbus_client:writeMultipleRegisters(1,led_register, string.pack('h', led_state))
     led_state = (led_state + 1) % 2
@@ -102,9 +98,9 @@ local function main()
     assert(racon.init())
     log(LOG_NAME, "INFO", "Server agent - OK")
     
-    local greenhouse_asset = racon.newAsset(ASSET_ID)
-    greenhouse_asset.tree.commands.toggleswitch = process_toggleswitch
-    greenhouse_asset :start()
+    greenhouse_asset = racon.newAsset(ASSET_ID)
+    greenhouse_asset.tree.commands.switchLight = process_toggleswitch
+    greenhouse_asset:start()
 
     log(LOG_NAME, "INFO", "Init done")
 

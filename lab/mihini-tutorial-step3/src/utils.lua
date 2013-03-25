@@ -11,19 +11,17 @@
 --
 -- @module utils
 -- 
-local t = {}
+local M = {}
 
-function t.processTemperature(value)
+function M.processTemperature(value)
 	-- 10 mV == 1¼C
 	local vsensor = value * 5.0 / 1024
 	return vsensor * 100.0
 end
 
-function t.processLuminosity(value)
+function M.processLuminosity(value)
 	local vsensor = value * 0.0048828125
 	return 500 / ( 10 * ( (5.0 - vsensor) / vsensor ) )
 end
 
-function t.identity(i) return i end
-
-return t
+return M
