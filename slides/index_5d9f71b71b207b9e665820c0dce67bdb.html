@@ -177,7 +177,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 				<section data-state="hands-on">
 					<h2>Connection details</h2>
 					<img src="images/lab-screenshots/new-connection-details.png" alt="New connection details" />
-					<h3 style="color:#c61717">192.168.0.{theNumberTaggedOnYourPi} ☺</h3>
+					<h3 style="color:#f44e4e">192.168.0.{theNumberTaggedOnYourPi} ☺</h3>
 				</section>
 				<section data-state="hands-on">
 					<h2>Remote file system</h2>
@@ -701,6 +701,9 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 									Raspberry Pi serial port:
 									<code>/dev/ttyACM0</code>
 								</li>
+								<li>
+									Modbus baudrate: 9600 bps
+								</li>
 							</ul>
 						</section>
 						<section data-state="bg arduino hands-on">
@@ -718,6 +721,12 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 									<code>/tmp</code>
 								</li>
 							</ul>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Launch the application remotely</h2>
+							<div>
+								Right-click on <code>main.lua</code>, then<br> <code>Run as > Remote Lua Application</code>
+							</div>
 						</section>
 					</section>
 					<section>
@@ -1007,11 +1016,11 @@ Lua interactive shell
 </code></pre>
 						</section>
 						<section data-state="hands-on">
-							<h2>Check server settings</h2>
+							<h2>Change server settings</h2>
 							<pre><code class="bash">
 > :agent.config.server
 = {
-   url = "tcp://m2m.eclipse.org:44900",
+   url = "tcp://192.168.0.10:44900",
    serverId = "M2M_ECLIPSE",
    retryperiod = 60,
    retrytimes = 10 }
@@ -1051,6 +1060,10 @@ Lua interactive shell
 									API to send converted values
 								</li>
 							</ul>
+						</section>
+						<section>
+							<h2>If it gets too difficult&hellip; ☺</h2>
+							<div>Download the solution <a href="http://192.168.0.10:1948/USB_STICK/mihini-step3-solution.zip" target="_blank">here</a>
 						</section>
 						<section>
 							<h2>Consuming data sent to the <br>M3DA server</h2>
