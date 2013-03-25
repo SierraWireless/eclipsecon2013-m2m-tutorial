@@ -144,9 +144,7 @@ document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.loca
 					<h2>Installing Koneki</h2>
 					<ul>
 						<li>
-							Unpack the archive you'll find in the
-							<code>Koneki/</code>
-							folder of the USB stick on your machine
+							Unpack the LDT archive corresponding to your machine
 							<ul>
 								<li>
 									⚠
@@ -346,7 +344,7 @@ end
 				</section>
 				<section data-state="hands-on">
 					<h2>Step #1.2</h2>
-					Now create a list of integer values ( in 0 to 1023) and call the function with each value
+					Now create a list of integer values (taken in the 0-1023 range) and call the function with each value
 					<br>
 					<small>
 						This a simple list iteration, don't forget to use Koneki auto-complete!!
@@ -675,11 +673,11 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 							<h2>Schematics</h2>
 							<embed src="svg/schematics_bb.svg" type="image/svg+xml" />
 						</section>
-						<section data-state="hands-on">
+						<section data-state="bg arduino hands-on">
 							<h2>Setup Mihini execution environment</h2>
 							<div>
 								Add the &nbsp;
-								<code>Mihini/mihini-0.8.zip</code>
+								<code>mihini-0.8.zip</code>
 								&nbsp; file
 								<br/>
 								in&nbsp;
@@ -688,7 +686,16 @@ mdev:writeMultipleRegisters(1, 90, string.pack("H3",21,159,357))
 							</div>
 						</section>
 						<section data-state="bg arduino hands-on">
-							<h2>What you need to know</h2>
+							<h2>What you need to do</h2>
+							<div>
+								<ul><li>Create a modbus client (slave ID = 1)</li>
+								<li>Read the registers corresponding to <br>the photoresistor and temperature sensor</li>
+								<li><em>Optionally</em>: write in the LED register</li>
+							</ul>
+							</div>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<h2>Reminder</h2>
 							<ul>
 								<li>
 									Raspberry Pi serial port:
@@ -911,6 +918,8 @@ local racon = require("racon")
 -- software element exchanging data with M2M server,
 -- identified by unique id
 local house = racon.newasset("house")
+-- finalize asset registration
+house:start()
 						</code></pre>
 						</section>
 						<section>
@@ -993,7 +1002,7 @@ Trying localhost...
 Connected to localhost.
 Escape character is '^]'.
 Lua interactive shell
-> agent.config.agent.deviceId = "your-id-of-choice"
+> agent.config.agent.deviceId = "raspi-102"
 > 
 </code></pre>
 						</section>
@@ -1041,10 +1050,15 @@ Lua interactive shell
 									<code>pushdata</code>
 									API to send converted values
 								</li>
-								<ul></section>
-								<section data-state="bg arduino hands-on">
-									<code><strong>GET</strong> http://192.168.0.10:8080/data/{deviceId}</code>
-									<pre><code class="json">{
+							</ul>
+						</section>
+						<section>
+							<h2>Consuming data sent to the <br>M3DA server</h2>
+							<h3>The M3DA server exposes a REST API for consuming data</h3>
+						</section>
+						<section data-state="bg arduino hands-on">
+							<code><strong>GET</strong> <a href="http://192.168.0.10:8080/data/{deviceId}" target="_blank">http://192.168.0.10:8080/data/{deviceId}</a></code>
+							<pre><code class="json">{
    "greenhouse.temperature": [{
      "value": [25.878906],
      "timestamp": "1363863252440418"
