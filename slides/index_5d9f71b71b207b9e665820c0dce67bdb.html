@@ -929,6 +929,23 @@ house:pushdata("bedroom", { temp=42, timestamp=os.time()}, "hourly")
 </code></pre>
 						</section>
 						<section>
+							<h3>Receiving commands</h3>
+							<pre><code class="lua">
+-- a command handler is a Lua function
+local function toggleSwitch(asset)
+  -- do some stuff...
+  -- and return 'ok' to indicate that
+  -- the command was properly processed 
+  return 'ok'
+end
+
+-- every asset has a tree field containing its data tree
+-- the data tree can be written from the server
+-- this can be used for e.g. having commands
+house.tree.commands.toggleswitch = toggleSwitch
+</code></pre>
+						</section>
+						<section>
 							<h3>Going Further</h3>
 							<div>
 								<ul>
@@ -1007,13 +1024,13 @@ Lua interactive shell
 						<section>
 							<h2>What you need to do</h2>
 							<ul>
-								<li>Load and init Racon module</li>
+								<li>Load and init <code>racon</code> module</li>
 								<li>
 									Create and start a new Asset
 									<br>					
 									assetId:
 									<code>greenhouse</code>
-									, or whatever you want
+									(or whatever you want)
 								</li>
 								<li>
 									Call
